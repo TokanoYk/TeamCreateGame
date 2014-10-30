@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: b7ba2d423e27c00469698505c5426b84
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - Player: {fileID: 100002, guid: 5b8efd88e6b51054f95fb46a7f3a6d3b, type: 2}
+  - WormObject: {fileID: 100002, guid: 9a5c0633830840e4fa97b0c7378d0084, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

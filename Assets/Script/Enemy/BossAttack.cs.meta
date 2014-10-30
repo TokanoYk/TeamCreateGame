@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 10e1082d140f0ac479e8dbaef1c57987
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - BossBulletObject: {fileID: 100000, guid: 386ab557c2698864e91331aea929e5fe, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
