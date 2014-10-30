@@ -13,10 +13,6 @@ public class BossAttackLaunch : MonoBehaviour {
 	private float y = 0.0f;
 	private float fallSpead1 = 0.03f;
 
-
-	//private BossAttack _bossAttack;
-	//public GameObject bossAttackObject;
-
 	public bool bullet1, bullet2, bullet3 = false;
 
 	// Use this for initialization

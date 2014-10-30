@@ -30,7 +30,8 @@ public class ActionPlayer : MonoBehaviour {
 	//	ステータス
 	//	-------------------------------------------
 	//	ジャンプする力
-	public float force = 2.1f;
+	[SerializeField]
+	private float force = 2.1f;
 	//	プレイヤーの体力
 	public int playerLife = 10;
 	//	攻撃力
@@ -146,6 +147,8 @@ public class ActionPlayer : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D coll)
 	{
+		//	BoxCollでダメージ判定を取る
+
 
 		//	敵やボス,攻撃,障害物にぶつかったら攻撃を食らう
 		if(coll.gameObject.tag == "Enemy" || coll.gameObject.tag == "Boss" ||

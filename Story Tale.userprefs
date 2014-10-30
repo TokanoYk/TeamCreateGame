@@ -1,0 +1,13 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\ActionFolder\ActionPlayer.cs">
+    <Files>
+      <File FileName="Assets\Script\ActionFolder\AppearanceBoss.cs" Line="42" Column="17" />
+      <File FileName="Assets\Script\ActionFolder\ActionPlayer.cs" Line="151" Column="3" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
