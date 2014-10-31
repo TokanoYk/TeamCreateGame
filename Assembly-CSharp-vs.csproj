@@ -48,19 +48,21 @@
   <ItemGroup>
      <Compile Include="Assets\Script\ActionFolder\ActionPlayer.cs" />
      <Compile Include="Assets\Script\ActionFolder\AnimationPlayer.cs" />
-     <Compile Include="Assets\Script\ActionFolder\AppearanceBoss.cs" />
      <Compile Include="Assets\Script\ActionFolder\Attack.cs" />
      <Compile Include="Assets\Script\ActionFolder\DeathManager.cs" />
      <Compile Include="Assets\Script\ActionFolder\P_Damage.cs" />
      <Compile Include="Assets\Script\ActionFolder\StageMove.cs" />
+     <Compile Include="Assets\Script\AdventureFolder\test.cs" />
      <Compile Include="Assets\Script\BasicScript\FadeManager.cs" />
      <Compile Include="Assets\Script\BasicScript\SingletonMonoBehaviour.cs" />
+     <Compile Include="Assets\Script\Enemy\AppearanceBoss.cs" />
      <Compile Include="Assets\Script\Enemy\BossAttack.cs" />
      <Compile Include="Assets\Script\Enemy\BossAttackLaunch.cs" />
      <Compile Include="Assets\Script\Enemy\BossDamage.cs" />
      <Compile Include="Assets\Script\Enemy\DamageEnemy.cs" />
      <Compile Include="Assets\Script\Player.cs" />
      <Compile Include="Assets\Script\Title.cs" />
+     <None Include="Assets\Resources\text\text.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

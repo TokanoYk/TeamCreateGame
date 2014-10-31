@@ -4,6 +4,7 @@ using System.Collections;
 //	ボスが登場するスクリプト
 public class AppearanceBoss : MonoBehaviour {
 
+	[SerializeField]
 	//	------------------------------------------------
 	//	GetComponent用
 	//	------------------------------------------------
@@ -13,7 +14,8 @@ public class AppearanceBoss : MonoBehaviour {
 	//	------------------------------------------------
 	//	判定用
 	//	------------------------------------------------
-	private bool BossMove = false;
+	public bool BossMove = false;
+	public bool AttackStart = false;
 
 	//	------------------------------------------------
 	//	アニメーション用
@@ -29,14 +31,12 @@ public class AppearanceBoss : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		BossMoveAnimatonStart ();
 	}
 
-	void OnTriggerStay2D(Collider2D coll)
+	/// <summary>ボスが右からフェードインしてくるアニメーションの再生</summary>
+	void BossMoveAnimatonStart()
 	{
-		//	場所を格納
-		Vector2 NewPosition = transform.position ;
-
 		if(_stageMove.StageStop)
 		{
 			//	アニメ＾ションの判定
@@ -49,16 +49,19 @@ public class AppearanceBoss : MonoBehaviour {
 				GetComponent<Animator>().SetBool("Move",BossMoveAnimation);
 			}
 		}
+	}
 
+	void OnTriggerStay2D(Collider2D coll)
+	{
 		//	登場する場所まで移動したら戦闘が開始する
 		if(coll.gameObject.tag == "AppearanceZone")
 		{
 			//	アニメーションの判定
 			BossAttackAnimationStart = true;
-			//	アニメーションの再生
+			//	先頭アニメーションの再生
 			GetComponent<Animator>().SetBool("SetAttack",BossAttackAnimationStart);
+			//	ボスの攻撃開始の判定
+			AttackStart = true;
 		}
-		//	場所の上書き
-		transform.position = NewPosition;
 	}
 }

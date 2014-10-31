@@ -6,8 +6,9 @@ public class BossAttackLaunch : MonoBehaviour {
 	//	-------------------------------------------
 	//	ステータス
 	//	-------------------------------------------
+	[SerializeField]
 	//	球のスピード
-	private float bulletSpeed = 6f;
+	private float bulletSpeed = 3.5f;
 
 	//	斜め打ち用
 	private float y = 0.0f;

@@ -9,6 +9,10 @@ public class ActionPlayer : MonoBehaviour {
 	//	-------------------------------------------
 	public GameObject AttackObject;
 	private Attack _attack; 
+
+	private StageMove _stageMove;
+	public GameObject StageObject;
+
 	//	点滅処理のレンダー
 	private SpriteRenderer _renderer;
 
@@ -23,14 +27,12 @@ public class ActionPlayer : MonoBehaviour {
 	private bool animationAttack = false;
 	private bool animationJumpAttack = false;
 
-	//	プレイヤーが死んだら
-	//public bool dead = false;
 
 	//	-------------------------------------------
 	//	ステータス
 	//	-------------------------------------------
-	//	ジャンプする力
 	[SerializeField]
+	//	ジャンプする力
 	private float force = 2.1f;
 	//	プレイヤーの体力
 	public int playerLife = 10;
@@ -44,6 +46,7 @@ public class ActionPlayer : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		_attack = AttackObject.GetComponent<Attack> ();
+		_stageMove = StageObject.GetComponent<StageMove>(); 
 		_renderer = gameObject.GetComponent<SpriteRenderer> ();
 
 		//	ステージが始まったら全回復
@@ -63,27 +66,33 @@ public class ActionPlayer : MonoBehaviour {
 	{
 		//	プレイヤーの位置を保存する
 		Vector2 NewPosition = transform.position;
-		
-		//	右に移動する
-		if (Input.GetKey (KeyCode.RightArrow))
+
+		//	スクロールが止まったら動けるように鳴る
+		if(_stageMove.StageStop)
 		{
-			NewPosition.x += moveSpeed * Time.deltaTime;
-		}
-		
-		//	左に移動する
-		if (Input.GetKey (KeyCode.LeftArrow))
-		{
-			NewPosition.x -= moveSpeed * Time.deltaTime;
+			//	右に移動する
+			if (Input.GetKey (KeyCode.RightArrow))
+			{
+				NewPosition.x += moveSpeed * Time.deltaTime;
+			}
+			
+			//	左に移動する
+			if (Input.GetKey (KeyCode.LeftArrow))
+			{
+				NewPosition.x -= moveSpeed * Time.deltaTime;
+			}
 		}
 
-		//	ジャンプ
-		if(!jump && Input.GetKey(KeyCode.Space) || !jump && Input.GetKey(KeyCode.X))
+
+
+		//	↑キーでジャンプ
+		if(!jump && Input.GetKey(KeyCode.UpArrow))
 		{
 			Jump();
 		}
 
 		//	攻撃
-		if(Input.GetKeyDown(KeyCode.Return)||Input.GetKeyDown(KeyCode.Z))
+		if(Input.GetKeyDown(KeyCode.Space))
 		{
 			_attack.SetAttack();
 			animationAttack = true;
