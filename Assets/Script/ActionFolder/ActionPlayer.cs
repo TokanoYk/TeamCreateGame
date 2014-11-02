@@ -36,7 +36,7 @@ public class ActionPlayer : MonoBehaviour {
 	//	ジャンプする力
 	private float force = 2.1f;
 	//	足場に乗っていた場合のジャンプ力
-	private float onScaffoldingForse = 3f;
+	private float onScaffoldingForse = 2.5f;
 	//	プレイヤーの体力
 	public int playerLife = 10;
 	//	攻撃力
