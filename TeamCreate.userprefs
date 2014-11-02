@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\ActionFolder\SetScaffolding.cs">
+    <Files>
+      <File FileName="Assets\Script\ActionFolder\SetScaffolding.cs" Line="54" Column="17" />
+      <File FileName="Assets\Script\ActionFolder\ActionPlayer.cs" Line="7" Column="2" />
+      <File FileName="Assets\Script\ActionFolder\Attack.cs" Line="14" Column="3" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

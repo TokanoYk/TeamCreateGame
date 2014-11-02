@@ -7,6 +7,7 @@ public class BossAttack : MonoBehaviour {
 	//	GetComponent用
 	//	-------------------------------------------
 	private AppearanceBoss _boss;
+	private BossDamage _bossDamage;
 	public GameObject BossObject;
 
 	//	-------------------------------------------
@@ -26,6 +27,7 @@ public class BossAttack : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		_boss = BossObject.GetComponent<AppearanceBoss> ();
+		_bossDamage = BossObject.GetComponent<BossDamage> ();
 	}
 	
 	// Update is called once per frame
@@ -35,7 +37,7 @@ public class BossAttack : MonoBehaviour {
 
 	void SetBossAttack()
 	{
-		if(_boss.AttackStart)
+		if(_boss.AttackStart && !_bossDamage.battleFinish)
 		{
 			//	Attackの発生
 			GameObject instant_object = (GameObject)Instantiate(BossBulletObject1,new Vector3(transform.position.x - 1,transform.position.y,transform.position.z),Quaternion.identity);

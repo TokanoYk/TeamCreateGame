@@ -8,7 +8,7 @@ public class BossDamage : MonoBehaviour {
 	//	ゲームオブジェクトの指定
 	//	-------------------------------------------
 	//	パーティクルの指定
-	public GameObject DeathParticle; 
+	//public GameObject DeathParticle; 
 
 	//	-------------------------------------------
 	//	GetComponent用
@@ -21,11 +21,14 @@ public class BossDamage : MonoBehaviour {
 	//	-------------------------------------------
 	//	判定用
 	//	-------------------------------------------
+
 	public bool damageFlag = false;
+	public bool battleFinish = false;
 
 	//	-------------------------------------------
 	//	ステータス
 	//	-------------------------------------------
+	[SerializeField]
 	//	体力
 	public int Life = 10;
 	//	攻撃力
@@ -59,6 +62,7 @@ public class BossDamage : MonoBehaviour {
 		}
 	}
 
+	/*
 	/// <summary>パーティクルを発生させる関数</summary>
 	void DrawParticle()
 	{
@@ -67,7 +71,7 @@ public class BossDamage : MonoBehaviour {
 		//	Particleの消去
 		GameObject.Destroy(instant_object,1);
 	}
-
+	*/
 
 	/// <summary>攻撃を食らった時に点滅する</summary>
 	void Flashing()
@@ -97,8 +101,10 @@ public class BossDamage : MonoBehaviour {
 	{
 		if(Life <= 0)
 		{
-			Destroy(gameObject);
-			DrawParticle();
+			//Destroy(gameObject);
+			//DrawParticle();
+			battleFinish = true;
+			GetComponent<Animator>().SetBool("BattleFinish",battleFinish);
 		}
 	}
 }

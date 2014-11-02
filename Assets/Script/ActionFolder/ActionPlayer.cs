@@ -20,13 +20,14 @@ public class ActionPlayer : MonoBehaviour {
 	//	判定用
 	//	-------------------------------------------
 	//	ジャンプ中ならtrue
-	private bool jump = false;
+	public bool jump = false;
 	private bool damageFlag = false;
-
+	
 	//	アニメーションのフラグ
 	private bool animationAttack = false;
 	private bool animationJumpAttack = false;
 
+	private bool OnScaffolding = false;
 
 	//	-------------------------------------------
 	//	ステータス
@@ -34,6 +35,8 @@ public class ActionPlayer : MonoBehaviour {
 	[SerializeField]
 	//	ジャンプする力
 	private float force = 2.1f;
+	//	足場に乗っていた場合のジャンプ力
+	private float onScaffoldingForse = 3f;
 	//	プレイヤーの体力
 	public int playerLife = 10;
 	//	攻撃力
@@ -51,7 +54,6 @@ public class ActionPlayer : MonoBehaviour {
 
 		//	ステージが始まったら全回復
 		playerLife = 10;
-
 	}
 	
 	// Update is called once per frame
@@ -83,8 +85,6 @@ public class ActionPlayer : MonoBehaviour {
 			}
 		}
 
-
-
 		//	↑キーでジャンプ
 		if(!jump && Input.GetKey(KeyCode.UpArrow))
 		{
@@ -102,12 +102,9 @@ public class ActionPlayer : MonoBehaviour {
 
 			if(jump)
 			{
-				//if(Input.GetKeyDown(KeyCode.Return))
-				//{
-					animationJumpAttack = true;
-					Invoke("BoolReset",0.5f);
-					GetComponent<Animator>().SetBool("JumpAttack",animationJumpAttack);
-				//}
+				animationJumpAttack = true;
+				Invoke("BoolReset",0.5f);
+				GetComponent<Animator>().SetBool("JumpAttack",animationJumpAttack);
 			}
 		}
 		transform.position = NewPosition;
@@ -136,17 +133,39 @@ public class ActionPlayer : MonoBehaviour {
 
 		//	オブジェクトの上方向に瞬間的にジャンプする
 		rigidbody2D.AddForce (transform.up * force, ForceMode2D.Impulse);
+
+		//	足場に乗っていた場合ジャンプ力の値を増やす
+		if(OnScaffolding /*&& !jump*/)
+		{
+			rigidbody2D.AddForce (transform.up * onScaffoldingForse, ForceMode2D.Impulse);
+		}
+		/*
+		if(!jump)
+		{
+			OnScaffolding = false;
+		}*/
 	}
 
 	//	ぶつかっていたら
 	void OnTriggerStay2D(Collider2D coll)
 	{
-		//	床と衝突したらfalseに戻す
-		if(coll.gameObject.tag == "Floor")
+		//	床と足場に衝突したらfalseに戻す
+		if(coll.gameObject.tag == "Floor" || coll.gameObject.tag == "Scaffolding")
 		{
 			jump = false;
+			//	足場に乗っているとジャンプ力を変える
+			if(coll.gameObject.tag == "Scaffolding")
+			{
+				OnScaffolding = true;
+			}
 		}
 
+		//	足場から降りた用の判定
+		if(coll.gameObject.tag == "Floor")
+		{
+			OnScaffolding = false;
+		}
+		
 		//	デスゾーンに落ちたら死亡
 		if(coll.gameObject.tag == "DeathZone")
 		{
@@ -212,8 +231,11 @@ public class ActionPlayer : MonoBehaviour {
 	/// <summary>プレイヤーが死んだ時の関数</summary>
 	void Death()
 	{
+		//	再読み込み
 		Application.LoadLevel(Application.loadedLevel);
 	}
+
+
 
 	void OnGUI()
 	{
