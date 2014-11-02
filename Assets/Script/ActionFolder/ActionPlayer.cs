@@ -38,7 +38,7 @@ public class ActionPlayer : MonoBehaviour {
 	//	足場に乗っていた場合のジャンプ力
 	private float onScaffoldingForse = 2.5f;
 	//	プレイヤーの体力
-	public int playerLife = 10;
+	public int LifePoint = 10;
 	//	攻撃力
 	public int attackPower = 1;
 
@@ -53,7 +53,7 @@ public class ActionPlayer : MonoBehaviour {
 		_renderer = gameObject.GetComponent<SpriteRenderer> ();
 
 		//	ステージが始まったら全回復
-		playerLife = 10;
+		LifePoint = 10;
 	}
 	
 	// Update is called once per frame
@@ -195,12 +195,12 @@ public class ActionPlayer : MonoBehaviour {
 	void Damage () 
 	{
 		Debug.Log("Damage!");
-		playerLife -= 1;
+		LifePoint -= 1;
 
 		// コルーチン開始
 		StartCoroutine("WaitForIt");
 		//	体力がなくなったらdeadをtrueにする
-		if(playerLife <= 0)
+		if(LifePoint <= 0)
 		{
 			Death();
 		}

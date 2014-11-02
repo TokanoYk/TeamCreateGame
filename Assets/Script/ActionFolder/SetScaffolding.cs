@@ -49,7 +49,7 @@ public class SetScaffolding : MonoBehaviour {
 	{
 		if(Once)
 		{
-			Stages = (GameObject)Instantiate(Scaffolding,new Vector2(transform.position.x + 2.3f,transform.position.y + 1f),Quaternion.identity);
+			Stages = (GameObject)Instantiate(Scaffolding,new Vector2(transform.position.x + 2.5f,transform.position.y + 1f),Quaternion.identity);
 			Stages.transform.parent = transform.parent; 
 			Once = false;
 		}
