@@ -1,11 +1,11 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
-//	強制横スクロールアクションステージのスクリプト
+//	強制横スクロールアクションステージのスクリプト.
 public class ActionPlayer : MonoBehaviour {
 
 	//	-------------------------------------------
-	//	GetComponent用
+	//	GetComponent用.
 	//	-------------------------------------------
 	public GameObject AttackObject;
 	private Attack _attack; 
@@ -13,36 +13,36 @@ public class ActionPlayer : MonoBehaviour {
 	private StageMove _stageMove;
 	public GameObject StageObject;
 
-	//	点滅処理のレンダー
+	//	点滅処理のレンダー.
 	private SpriteRenderer _renderer;
 
 	//	-------------------------------------------
-	//	判定用
+	//	判定用.
 	//	-------------------------------------------
-	//	ジャンプ中ならtrue
+	//	ジャンプ中ならtrue.
 	public bool jump = false;
 	private bool damageFlag = false;
 	
-	//	アニメーションのフラグ
+	//	アニメーションのフラグ.
 	private bool animationAttack = false;
 	private bool animationJumpAttack = false;
 
 	private bool OnScaffolding = false;
 
 	//	-------------------------------------------
-	//	ステータス
+	//	ステータス.
 	//	-------------------------------------------
 	[SerializeField]
-	//	ジャンプする力
+	//	ジャンプする力.
 	private float force = 2.1f;
-	//	足場に乗っていた場合のジャンプ力
+	//	足場に乗っていた場合のジャンプ力.
 	private float onScaffoldingForse = 2.5f;
-	//	プレイヤーの体力
+	//	プレイヤーの体力.
 	public int LifePoint = 10;
-	//	攻撃力
+	//	攻撃力.
 	public int attackPower = 1;
 
-	//	プレイヤーの移動スピード(開発用)
+	//	プレイヤーの移動スピード(開発用).
 	private float moveSpeed = 10.0f;
 	
 
@@ -52,7 +52,7 @@ public class ActionPlayer : MonoBehaviour {
 		_stageMove = StageObject.GetComponent<StageMove>(); 
 		_renderer = gameObject.GetComponent<SpriteRenderer> ();
 
-		//	ステージが始まったら全回復
+		//	ステージが始まったら全回復.
 		LifePoint = 10;
 	}
 	
@@ -66,32 +66,32 @@ public class ActionPlayer : MonoBehaviour {
 	/// <summary>プレイヤーの移動関数</summary>
 	void PlayerMove()
 	{
-		//	プレイヤーの位置を保存する
+		//	プレイヤーの位置を保存する.
 		Vector2 NewPosition = transform.position;
 
-		//	スクロールが止まったら動けるように鳴る
+		//	スクロールが止まったら動けるように鳴る.
 		if(_stageMove.StageStop)
 		{
-			//	右に移動する
+			//	右に移動する.
 			if (Input.GetKey (KeyCode.RightArrow))
 			{
 				NewPosition.x += moveSpeed * Time.deltaTime;
 			}
 			
-			//	左に移動する
+			//	左に移動する.
 			if (Input.GetKey (KeyCode.LeftArrow))
 			{
 				NewPosition.x -= moveSpeed * Time.deltaTime;
 			}
 		}
 
-		//	↑キーでジャンプ
+		//	↑キーでジャンプ.
 		if(!jump && Input.GetKey(KeyCode.UpArrow))
 		{
 			Jump();
 		}
 
-		//	攻撃
+		//	攻撃.
 		if(Input.GetKeyDown(KeyCode.Space))
 		{
 			_attack.SetAttack();
@@ -126,47 +126,42 @@ public class ActionPlayer : MonoBehaviour {
 		}
 	}
 
-	/// <summary>プレイヤーのジャンプ関数</summary>
+	/// <summary>プレイヤーのジャンプ関数.</summary>
 	void Jump()
 	{
 		jump = true;
 
-		//	オブジェクトの上方向に瞬間的にジャンプする
+		//	オブジェクトの上方向に瞬間的にジャンプする.
 		rigidbody2D.AddForce (transform.up * force, ForceMode2D.Impulse);
 
-		//	足場に乗っていた場合ジャンプ力の値を増やす
-		if(OnScaffolding /*&& !jump*/)
+		//	足場に乗っていた場合ジャンプ力の値を増やす.
+		if(OnScaffolding)
 		{
 			rigidbody2D.AddForce (transform.up * onScaffoldingForse, ForceMode2D.Impulse);
 		}
-		/*
-		if(!jump)
-		{
-			OnScaffolding = false;
-		}*/
 	}
 
-	//	ぶつかっていたら
+	//	ぶつかっていたら.
 	void OnTriggerStay2D(Collider2D coll)
 	{
-		//	床と足場に衝突したらfalseに戻す
+		//	床と足場に衝突したらfalseに戻す.
 		if(coll.gameObject.tag == "Floor" || coll.gameObject.tag == "Scaffolding")
 		{
 			jump = false;
-			//	足場に乗っているとジャンプ力を変える
+			//	足場に乗っているとジャンプ力を変える.
 			if(coll.gameObject.tag == "Scaffolding")
 			{
 				OnScaffolding = true;
 			}
 		}
 
-		//	足場から降りた用の判定
+		//	足場から降りた用の判定.
 		if(coll.gameObject.tag == "Floor")
 		{
 			OnScaffolding = false;
 		}
 		
-		//	デスゾーンに落ちたら死亡
+		//	デスゾーンに落ちたら死亡.
 		if(coll.gameObject.tag == "DeathZone")
 		{
 			Death();
@@ -175,14 +170,14 @@ public class ActionPlayer : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D coll)
 	{
-		//	BoxCollでダメージ判定を取る
+		//	BoxCollでダメージ判定を取る.
 
 
-		//	敵やボス,攻撃,障害物にぶつかったら攻撃を食らう
+		//	敵やボス,攻撃,障害物にぶつかったら攻撃を食らう.
 		if(coll.gameObject.tag == "Enemy" || coll.gameObject.tag == "Boss" ||
 		   coll.gameObject.tag == "BossAttack" || coll.gameObject.tag == "Obstacle")
 		{
-			//	ダメージフラグをtrueにする
+			//	ダメージフラグをtrueにする.
 			damageFlag = true;
 			if(damageFlag)
 			{
@@ -197,9 +192,9 @@ public class ActionPlayer : MonoBehaviour {
 		Debug.Log("Damage!");
 		LifePoint -= 1;
 
-		// コルーチン開始
+		// コルーチン開始.
 		StartCoroutine("WaitForIt");
-		//	体力がなくなったらdeadをtrueにする
+		//	体力がなくなったらdeadをtrueにする.
 		if(LifePoint <= 0)
 		{
 			Death();
@@ -218,12 +213,12 @@ public class ActionPlayer : MonoBehaviour {
 
 	IEnumerator WaitForIt()
 	{
-		//	１秒間処理を止める
+		//	１秒間処理を止める.
 		yield return new WaitForSeconds (1);
 
 
-		//	１秒間無敵になってる？
-		//	１秒後ダメージフラグをfalseにして点滅を戻す
+		//	１秒間無敵になってる？.
+		//	１秒後ダメージフラグをfalseにして点滅を戻す.
 		damageFlag = false;
 		_renderer.color = new Color (1f, 1f, 1f, 1f);
 	}
@@ -231,15 +226,13 @@ public class ActionPlayer : MonoBehaviour {
 	/// <summary>プレイヤーが死んだ時の関数</summary>
 	void Death()
 	{
-		//	再読み込み
+		//	再読み込み.
 		Application.LoadLevel(Application.loadedLevel);
 	}
-
-
-
+	
 	void OnGUI()
 	{
-		//	プレイヤーの体力（読者数）を左上に表示
+		//	プレイヤーの体力（読者数）を左上に表示.
 		//GUI.Label (new Rect (0, 0, 10, 10));
 	}
 }

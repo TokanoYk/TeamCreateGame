@@ -49,9 +49,8 @@
      <Compile Include="Assets\Script\ActionFolder\ActionPlayer.cs" />
      <Compile Include="Assets\Script\ActionFolder\AnimationPlayer.cs" />
      <Compile Include="Assets\Script\ActionFolder\Attack.cs" />
-     <Compile Include="Assets\Script\ActionFolder\DeathManager.cs" />
+     <Compile Include="Assets\Script\ActionFolder\BossBattleStart.cs" />
      <Compile Include="Assets\Script\ActionFolder\DrawLifePoint.cs" />
-     <Compile Include="Assets\Script\ActionFolder\P_Damage.cs" />
      <Compile Include="Assets\Script\ActionFolder\SetScaffolding.cs" />
      <Compile Include="Assets\Script\ActionFolder\StageMove.cs" />
      <Compile Include="Assets\Script\AdventureFolder\test.cs" />

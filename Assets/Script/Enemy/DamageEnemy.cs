@@ -34,21 +34,6 @@ public class DamageEnemy : MonoBehaviour {
 	
 	}
 
-	/*
-	/// <summary>敵がダメージを受けるときに呼び出される</summary>
-	//	自分で消すのが問題ありなので別で消す
-	public void OnWormDamage(int _damage,bool dead)
-	{
-		wormHp -= _damage;
-
-		if(wormHp <= 0)
-		{
-			//	体力がなくなったらdeadをtrueにする
-			Debug.Log("death");
-			dead = true;
-		}
-	}*/
-
 	/// <summary>ぶつかった</summary>
 	void OnTriggerEnter2D(Collider2D coll)
 	{
