@@ -1,14 +1,15 @@
 fileFormatVersion: 2
-guid: 11b5a2b2872c4fe42bc572029e915f21
+guid: ed3ae30ad1cd5ba4a94ebbf0742528a5
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Motion_1
-    21300002: Motion_2
-    21300004: Motion_3
-    21300006: Motion_4
-    21300008: Motion_5
-    21300010: Motion_6
-    21300012: Motion_7
+    21300000: Stop
+    21300002: Dash1
+    21300004: Dash2
+    21300006: Dash3
+    21300008: Jump
+    21300010: JumpAttack
+    21300012: Attack1
+    21300014: Attack2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -44,13 +45,13 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 80
+  spritePixelsToUnits: 75
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Motion_1
+    - name: Stop
       rect:
         serializedVersion: 2
         x: 650
@@ -60,7 +61,7 @@ TextureImporter:
       alignment: 9
       pivot: {x: .5, y: .100000001}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Motion_2
+    - name: Dash1
       rect:
         serializedVersion: 2
         x: 0
@@ -70,7 +71,17 @@ TextureImporter:
       alignment: 9
       pivot: {x: .5, y: .100000001}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Motion_3
+    - name: Dash2
+      rect:
+        serializedVersion: 2
+        x: 1950
+        y: 0
+        width: 650
+        height: 512
+      alignment: 9
+      pivot: {x: .5, y: .100000001}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Dash3
       rect:
         serializedVersion: 2
         x: 1950
@@ -80,7 +91,27 @@ TextureImporter:
       alignment: 9
       pivot: {x: .5, y: .100000001}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Motion_4
+    - name: Jump
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 650
+        height: 512
+      alignment: 9
+      pivot: {x: .5, y: .100000001}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JumpAttack
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 512
+        width: 650
+        height: 512
+      alignment: 9
+      pivot: {x: .5, y: .100000001}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Attack1
       rect:
         serializedVersion: 2
         x: 650
@@ -90,31 +121,11 @@ TextureImporter:
       alignment: 9
       pivot: {x: .5, y: .100000001}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Motion_5
+    - name: Attack2
       rect:
         serializedVersion: 2
         x: 1300
         y: 0
-        width: 650
-        height: 512
-      alignment: 9
-      pivot: {x: .5, y: .100000001}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Motion_6
-      rect:
-        serializedVersion: 2
-        x: 1300
-        y: 512
-        width: 650
-        height: 512
-      alignment: 9
-      pivot: {x: .5, y: .100000001}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Motion_7
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 512
         width: 650
         height: 512
       alignment: 9
