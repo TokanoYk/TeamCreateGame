@@ -48,7 +48,6 @@
   <ItemGroup>
      <Compile Include="Assets\ChildColliderTrigger.cs" />
      <Compile Include="Assets\Script\ActionFolder\ActionPlayer.cs" />
-     <Compile Include="Assets\Script\ActionFolder\AnimationPlayer.cs" />
      <Compile Include="Assets\Script\ActionFolder\Attack.cs" />
      <Compile Include="Assets\Script\ActionFolder\BossBattleStart.cs" />
      <Compile Include="Assets\Script\ActionFolder\DrawLifePoint.cs" />

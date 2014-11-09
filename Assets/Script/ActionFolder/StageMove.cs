@@ -9,9 +9,16 @@ public class StageMove : MonoBehaviour {
 
 	public bool StageStop = false;
 
+	//	-------------------------------------------
+	//	GetComponent用
+	//	-------------------------------------------
+	private ActionPlayer _player;
+	public GameObject PlayerObject;
+
+
 	// Use this for initialization
 	void Start () {
-	
+		_player = PlayerObject.GetComponent<ActionPlayer> ();
 	}
 	
 	// Update is called once per frame
@@ -22,14 +29,17 @@ public class StageMove : MonoBehaviour {
 		}
 	}
 
-	void Scroll()
+	public void Scroll()
 	{
-		//	場所を格納
-		Vector2 NewPosition = transform.position ;
-		//	ステージの移動
-		NewPosition.x -= moveSpeed * Time.deltaTime;
-		//	場所の上書き
-		transform.position = NewPosition;
+		if(_player.stageStart)
+		{
+			//	場所を格納
+			Vector2 NewPosition = transform.position ;
+			//	ステージの移動
+			NewPosition.x -= moveSpeed * Time.deltaTime;
+			//	場所の上書き
+			transform.position = NewPosition;
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D coll)

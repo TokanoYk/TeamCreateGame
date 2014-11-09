@@ -22,7 +22,10 @@ public class ActionPlayer : MonoBehaviour {
 	//	ジャンプ中ならtrue.
 	public bool jump = false;
 	private bool damageFlag = false;
-	
+
+	public bool stageStart = false;
+	private bool Once = true;
+
 	//	アニメーションのフラグ.
 	private bool animationAttack = false;
 	private bool animationJumpAttack = false;
@@ -69,7 +72,7 @@ public class ActionPlayer : MonoBehaviour {
 		//	プレイヤーの位置を保存する.
 		Vector2 NewPosition = transform.position;
 
-		//	スクロールが止まったら動けるように鳴る.
+		//	スクロールが止まったら動けるようになる.
 		if(_stageMove.StageStop)
 		{
 			//	右に移動する.
@@ -82,6 +85,17 @@ public class ActionPlayer : MonoBehaviour {
 			if (Input.GetKey (KeyCode.LeftArrow))
 			{
 				NewPosition.x -= moveSpeed * Time.deltaTime;
+			}
+		}
+
+		//	Enterでステージが動く.
+		if(Input.GetKeyDown(KeyCode.Return))
+		{
+			if(Once)
+			{
+				stageStart = true;
+				GetComponent<Animator>().SetBool("Dash",stageStart);
+				Once = false;
 			}
 		}
 
@@ -107,6 +121,7 @@ public class ActionPlayer : MonoBehaviour {
 				GetComponent<Animator>().SetBool("JumpAttack",animationJumpAttack);
 			}
 		}
+
 		transform.position = NewPosition;
 	}
 
