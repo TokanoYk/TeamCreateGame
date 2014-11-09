@@ -52,7 +52,7 @@ public class BossDamage : MonoBehaviour {
 	{
 		if(coll.gameObject.tag == "Attack" )
 		{
-			//	ダメージフラグをtrueにする
+			//	ダメージフラグをtrueにする.
 			damageFlag = true;
 			Life -= _player.attackPower;
 			// コルーチン開始

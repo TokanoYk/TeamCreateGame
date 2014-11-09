@@ -131,6 +131,8 @@ public class ActionPlayer : MonoBehaviour {
 	{
 		jump = true;
 
+		GetComponent<Animator>().SetBool("Ground",jump);
+
 		//	オブジェクトの上方向に瞬間的にジャンプする.
 		rigidbody2D.AddForce (transform.up * force, ForceMode2D.Impulse);
 
@@ -148,6 +150,7 @@ public class ActionPlayer : MonoBehaviour {
 		if(coll.gameObject.tag == "Floor" || coll.gameObject.tag == "Scaffolding")
 		{
 			jump = false;
+			GetComponent<Animator>().SetBool("Ground",jump);
 			//	足場に乗っているとジャンプ力を変える.
 			if(coll.gameObject.tag == "Scaffolding")
 			{
@@ -168,11 +171,9 @@ public class ActionPlayer : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerEnter2D(Collider2D coll)
+	public void RedirectedOnTriggerEnter2D (Collider2D coll)
 	{
-		//	BoxCollでダメージ判定を取る.
-
-
+		//処理を記述
 		//	敵やボス,攻撃,障害物にぶつかったら攻撃を食らう.
 		if(coll.gameObject.tag == "Enemy" || coll.gameObject.tag == "Boss" ||
 		   coll.gameObject.tag == "BossAttack" || coll.gameObject.tag == "Obstacle")
@@ -185,6 +186,26 @@ public class ActionPlayer : MonoBehaviour {
 			}
 		}
 	}
+
+	/*
+	void OnTriggerEnter2D(Collider2D coll)
+	{
+		//	BoxCollでダメージ判定を取る.
+		//	敵やボス,攻撃,障害物にぶつかったら攻撃を食らう.
+		if(coll.gameObject.tag == "Enemy" || coll.gameObject.tag == "Boss" ||
+		   coll.gameObject.tag == "BossAttack" || coll.gameObject.tag == "Obstacle")
+		{
+			//	ダメージフラグをtrueにする.
+			damageFlag = true;
+			if(damageFlag)
+			{
+				Damage();
+			}
+		}
+
+
+	}
+	*/
 
 	/// <summary>敵に攻撃された時に呼ぶ関数</summary>
 	void Damage () 

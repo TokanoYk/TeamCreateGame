@@ -4,7 +4,7 @@ using System.Collections;
 //	ボスが登場するスクリプト
 public class AppearanceBoss : MonoBehaviour {
 
-	[SerializeField]
+
 	//	------------------------------------------------
 	//	GetComponent用
 	//	------------------------------------------------

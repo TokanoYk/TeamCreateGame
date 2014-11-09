@@ -21,7 +21,7 @@ public class AnimationPlayer : MonoBehaviour {
 		//接地しているかどうかを判定する
 		//自分の基点の少し上と少し下の2点を渡して、その間にColliderがあればtrueが返る
 		bool ground = Physics2D.Linecast(
-				transform.position - transform.up * 0.5f,
+				transform.position - transform.up * 0.2f,
 				transform.position + transform.up * 0.1f,
 				groundLayer
 				);

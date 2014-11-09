@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\ChildColliderTrigger.cs" />
      <Compile Include="Assets\Script\ActionFolder\ActionPlayer.cs" />
      <Compile Include="Assets\Script\ActionFolder\AnimationPlayer.cs" />
      <Compile Include="Assets\Script\ActionFolder\Attack.cs" />
