@@ -51,19 +51,25 @@
      <Compile Include="Assets\Script\ActionFolder\Attack.cs" />
      <Compile Include="Assets\Script\ActionFolder\BossBattleStart.cs" />
      <Compile Include="Assets\Script\ActionFolder\DrawLifePoint.cs" />
+     <Compile Include="Assets\Script\ActionFolder\Enemy\AppearanceBoss.cs" />
+     <Compile Include="Assets\Script\ActionFolder\Enemy\BossAttack.cs" />
+     <Compile Include="Assets\Script\ActionFolder\Enemy\BossAttackLaunch.cs" />
+     <Compile Include="Assets\Script\ActionFolder\Enemy\BossDamage.cs" />
+     <Compile Include="Assets\Script\ActionFolder\Enemy\DamageEnemy.cs" />
      <Compile Include="Assets\Script\ActionFolder\SetScaffolding.cs" />
      <Compile Include="Assets\Script\ActionFolder\StageMove.cs" />
-     <Compile Include="Assets\Script\AdventureFolder\test.cs" />
+     <Compile Include="Assets\Script\AdventureFolder\NovelPatt.cs" />
+     <Compile Include="Assets\Script\AdventureFolder\Text.cs" />
      <Compile Include="Assets\Script\BasicScript\FadeManager.cs" />
      <Compile Include="Assets\Script\BasicScript\SingletonMonoBehaviour.cs" />
-     <Compile Include="Assets\Script\Enemy\AppearanceBoss.cs" />
-     <Compile Include="Assets\Script\Enemy\BossAttack.cs" />
-     <Compile Include="Assets\Script\Enemy\BossAttackLaunch.cs" />
-     <Compile Include="Assets\Script\Enemy\BossDamage.cs" />
-     <Compile Include="Assets\Script\Enemy\DamageEnemy.cs" />
      <Compile Include="Assets\Script\Player.cs" />
      <Compile Include="Assets\Script\Title.cs" />
      <None Include="Assets\Resources\text\text.txt" />
+     <None Include="Assets\SU3DJPFont\list.txt" />
+     <None Include="Assets\SU3DJPFont\readme_jp.txt" />
+     <None Include="Assets\SU3DJPFont\license.txt" />
+     <None Include="Assets\SU3DJPFont\readme.txt" />
+     <None Include="Assets\SU3DJPFont\license_jp.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

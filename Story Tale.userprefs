@@ -1,9 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\ActionFolder\ActionPlayer.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\JokerTest\Assets\JOKER\Scripts\Novel\Core\GameManager.cs">
     <Files>
-      <File FileName="Assets\Script\ActionFolder\ActionPlayer.cs" Line="92" Column="39" />
-      <File FileName="Assets\Script\ActionFolder\StageMove.cs" Line="32" Column="8" />
+      <File FileName="..\JokerTest\Assets\JOKER\Scripts\Novel\Core\GameManager.cs" Line="86" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
