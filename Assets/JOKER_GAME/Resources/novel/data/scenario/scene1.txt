@@ -1,0 +1,59 @@
+;チュートリアル用スクリプトファイル
+
+;メッセージ表示
+[showmessage]
+
+;共通ライブラリ
+;セーブ・ロードバックログなど基本的な機能を取り込む
+[call file=system target="*system_setting_buttons"]
+
+;ゲーム作成で便利なマクロ集
+[call file=libs/utils]
+[text_new name=_sp_chara_name layer=ui x="0.13" y=0.253 val="" color="DDFF00" fontsize=30 anchor="MiddleLeft"]
+[text_show name="_sp_chara_name"]
+
+;背景の新規定義
+[bg_new storage="Background"]
+
+;背景の表示
+[bg_show]
+
+[wait time=1]
+
+;[l]は一時停止？
+;[p]は普通に次へ
+;[r]は改行
+
+ユークの家[p]
+
+
+ただいまー。[p]
+
+
+
+おかえり！お兄ちゃん！[p]
+
+おかえりなさい、ユークさん。[r]
+
+お邪魔しています。[p]
+
+？　ネネア、彼女は？[p]
+
+ミリアさんだよ。[r]
+お兄ちゃんに用があるんだって！[p]
+
+初めまして、ミリアです。[p]
+
+初めまして、兄のユークです。[r]
+俺に用って、何ですか？[p]
+
+…ネネアちゃん、すみません。[r]
+どこか人を気にせず話せる場所はありませんか？[p]
+
+この家使っても大丈夫ですよ。[r]
+お母さんたちはしばらく帰ってこないだろうし、[r]
+わたしも夕飯の買い出しに行くので！[p]
+
+
+[go name="Stage1"]
+

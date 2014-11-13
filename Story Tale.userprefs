@@ -1,8 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\JokerTest\Assets\JOKER\Scripts\Novel\Core\GameManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\JOKER\Scripts\Novel\Components\Doc.cs">
     <Files>
-      <File FileName="..\JokerTest\Assets\JOKER\Scripts\Novel\Core\GameManager.cs" Line="86" Column="1" />
+      <File FileName="Assets\JOKER\Scripts\Novel\Components\Doc.cs" Line="5" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

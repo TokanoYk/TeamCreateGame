@@ -1,0 +1,21 @@
+
+;-config ------------------
+*configstart
+
+;コンフィグ画面
+
+[bg_new name="background" layer="background" storage="savebg"]
+[bg_show name="background" ]
+
+@image_new storage="close" layer=ui name="button_close_save" tag="config" x=5.2 y=4.0 scale=1.5
+@text_new val="コンフィグ" name="text_config_title" tag=config x=0 y=-0.108
+
+[image_show  time=0 tag=config]
+
+[evt name="button_close_save" act="click" target="close_config"]
+[s]
+
+*close_config
+[awakegame]
+[s]
+;-----------------------
