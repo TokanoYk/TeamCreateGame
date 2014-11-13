@@ -1,8 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\JOKER\Scripts\Novel\Components\Doc.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\JOKER\Scripts\Novel\Components\SystemComponent.cs">
     <Files>
-      <File FileName="Assets\JOKER\Scripts\Novel\Components\Doc.cs" Line="5" Column="3" />
+      <File FileName="Assets\JOKER\Scripts\Novel\Unity\MessageArea.cs" Line="61" Column="31" />
+      <File FileName="Assets\JOKER\Scripts\Novel\Components\SystemComponent.cs" Line="317" Column="37" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

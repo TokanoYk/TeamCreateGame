@@ -62,14 +62,14 @@
      <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\first.txt" />
      <None Include="Assets\SU3DJPFont\license_jp.txt" />
      <None Include="Assets\JOKER_GAME\Resources\novel\data\config\config.txt" />
- <Reference Include="UnityEditor.Graphs">
- <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
- </Reference>
  <Reference Include="LitJson">
  <HintPath>C:/Users/vantan/Desktop/Story Tale/Assets/JOKER_GAME/Plugins/LitJson.dll</HintPath>
  </Reference>
  <Reference Include="NCalc">
  <HintPath>C:/Users/vantan/Desktop/Story Tale/Assets/JOKER_GAME/Plugins/NCalc.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Graphs">
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

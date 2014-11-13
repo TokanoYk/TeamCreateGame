@@ -58,7 +58,7 @@ public class MessageArea : MonoBehaviour {
 
 	public void crossFade(float val){
 
-		var color_fore = this.guiTextMessage.color;
+		var color_fore = Color.black/*this.guiTextMessage.color*/;
 		color_fore.a = val;
 		this.guiTextMessage.color = color_fore;
 

@@ -3,6 +3,7 @@
 ;メッセージ表示
 [showmessage]
 
+
 ;共通ライブラリ
 ;セーブ・ロードバックログなど基本的な機能を取り込む
 [call file=system target="*system_setting_buttons"]
@@ -18,12 +19,16 @@
 ;背景の表示
 [bg_show]
 
+;[text_new color="000000" fontsize=30 anchor="MiddleLeft"]
+
 [wait time=1]
 
 ;[l]は一時停止？
 ;[p]は普通に次へ
 ;[r]は改行
 
+
+[text_new name=_sp_chara_name layer=ui x="0.13" y=0.253 val="ただいまー" color="DDFF00" fontsize=30 anchor="MiddleLeft"]
 ユークの家[p]
 
 
