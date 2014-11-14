@@ -48,7 +48,6 @@
   <ItemGroup>
      <Compile Include="Assets\Editor\Exporter.cs" />
      <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\libs\utils.txt" />
-     <None Include="Assets\Resources\text\text.txt" />
      <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\libs\save.txt" />
      <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\title.txt" />
      <None Include="Assets\SU3DJPFont\list.txt" />

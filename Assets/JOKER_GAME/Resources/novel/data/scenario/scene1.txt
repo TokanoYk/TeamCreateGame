@@ -19,7 +19,17 @@
 ;背景の表示
 [bg_show]
 
-;[text_new color="000000" fontsize=30 anchor="MiddleLeft"]
+;------------------------------------------------------------------
+;	キャラ定義
+;------------------------------------------------------------------
+;キャラの宣言
+[chara_new name=yuuku storage=yuuku scale="1.5" x=4]
+[chara_new name=nenea storage=nenea scale="1.5" x=-4 =-0.5]
+[chara_new name=miria storage=miria scale="1.5" x=-4]
+
+;	--------------------------------------------------------
+;	ストーリー開始
+;	--------------------------------------------------------
 
 [wait time=1]
 
@@ -28,25 +38,30 @@
 ;[r]は改行
 
 
-[text_new name=_sp_chara_name layer=ui x="0.13" y=0.253 val="ただいまー" color="DDFF00" fontsize=30 anchor="MiddleLeft"]
 ユークの家[p]
 
-
+;キャラを表示
+[show name=yuuku]
 ただいまー。[p]
 
-
-
+[show name=nenea]
 おかえり！お兄ちゃん！[p]
 
+[chara_hide name=nenea time=0.5 wait=false]
+[show name=miria]
 おかえりなさい、ユークさん。[r]
 
 お邪魔しています。[p]
 
 ？　ネネア、彼女は？[p]
 
+[chara_hide name=miria time=0.5 wait=false]
+[chara_show name=nenea ]
 ミリアさんだよ。[r]
 お兄ちゃんに用があるんだって！[p]
 
+[chara_hide name=nenea time=0.5 wait=false]
+[chara_show name=miria ]
 初めまして、ミリアです。[p]
 
 初めまして、兄のユークです。[r]
@@ -55,9 +70,155 @@
 …ネネアちゃん、すみません。[r]
 どこか人を気にせず話せる場所はありませんか？[p]
 
+[chara_hide name=miria time=0.5 wait=false]
+[chara_show name=nenea ]
 この家使っても大丈夫ですよ。[r]
-お母さんたちはしばらく帰ってこないだろうし、[r]
+お母さんたちはしばらく帰ってこないだろうし[r]
 わたしも夕飯の買い出しに行くので！[p]
+
+[chara_hide name=nenea time=0.5 wait=false]
+[chara_show name=miria ]
+ありがとうございます。[p]
+
+ネネア！グラタンがいい！[p]
+
+[chara_hide name=miria time=0.5 wait=false]
+[chara_show name=nenea ]
+却下！今日はシチューなの！[r]
+それじゃあミリアさん、ごゆっくりどうぞ~[p]
+
+
+;間？開始
+…[p]
+
+;ブラックアウト
+[chara_hide name=yuuku time=0]
+[chara_hide name=nenea time=0]
+[bg_mod storage="Black" time=2]
+[bg_mod storage="Background"]
+
+……[p]
+………[p]
+
+;キャラ表示
+[show name=yuuku]
+[show name=miria]
+
+
+旅から戻って来たばかりで[r]
+お疲れのところすみません。[r]
+ですが、事は一刻を争います。[p]
+
+ええと…、どういうことですか？[p]
+
+最近、突然消える人や村などが[r]
+増えていることを知っていますか？[p]
+
+まあ、旅の間に何度か見かけましたけど…。[r]
+それが何か関係あるんですか？[p]
+
+大ありです。[r]
+これは、この世界が消滅へと進んで[r]
+行っていることを表しています。[p]
+
+それも自然にではありません。[r]
+ある『害虫』が原因で、です！[p]
+
+そ、そうなんですか。[p]
+
+（いきなり熱くなった…。）[p]
+
+その害虫…私たちは『本ノ蟲』と呼んでいますが[r]
+そいつらは物語にある【言葉】を食べてしまって[r]
+いるんです！[p]
+
+そのせいでこの本の読者が減り[r]
+世界が消滅の危機に陥っています！[p]
+
+なので！[r]
+『本ノ蟲』を排除し[r]
+物語にできた【穴】を埋めてください！[p]
+
+いや、無理です。[r]
+お引き取り下さい。[p]
+
+引けません！[r]
+お願いします![p]
+
+そうは言われても…[p]
+
+俺、物語の詳細を知らないですし[r]
+剣は一応あるけどただの放浪者です。[r]
+もっと適任が居るんじゃないですか？[p]
+
+現状、あなた以外に物語の再構成を[r]
+行える立ち位置の者は居ないのです。[p]
+
+はぁ…。[p]
+
+…今日のところは帰りますが[r]
+また明日来ますので。[r]
+よい返事を期待しています。[p]
+
+…どうぞご勝手に。[p]
+
+;キャラ非表示
+[chara_hide name=yuuku time=0]
+[chara_hide name=miria time=0]
+
+…[p]
+
+;翌日フェード
+[bg_mod storage="Black" time=2]
+[bg_mod storage="Background"]
+
+
+……[p]
+………[p]
+
+
+翌日[p]
+
+[show name=yuuku]
+[show name=nenea]
+
+お兄ちゃん[r]
+ミリアさん今日も来るんだよね？[p]
+
+らしいな。[p]
+
+じゃあおいしいお菓子用意しとかないとだね！[r]
+何にしようかなぁ？[p]
+
+;ネネア非表示
+[chara_hide name=nenea]
+（はぁ…。憂鬱だ。）[p]
+
+キャア！[p]
+
+ネネア？[p]
+
+[chara_show name=nenea ]
+（なんだ、こいつ！？）[p]
+
+お兄ちゃん、助けてっ！[p]
+
+待ってろ！[r]
+すぐ助けてやる！[p]
+
+お兄ちゃっ…！[p]
+
+;ネネア非表示
+[chara_hide name=nenea]
+
+ネネアッ！[r]
+くそっ！逃げんな！！[p]
+
+;アニメーションで移動させて森ステージ背景に
+
+！？　なんだ…これ。[r]
+こんな森じゃなかったはず…！[r]
+あっ！お前、逃げんなって！[p]
 
 
 [go name="Stage1"]
