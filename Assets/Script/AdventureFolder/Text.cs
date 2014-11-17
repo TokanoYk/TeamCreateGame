@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 public class Text : MonoBehaviour {
-	/*
+
 	//	画像表示順
 	public int Depth = 0;
 
@@ -19,92 +19,120 @@ public class Text : MonoBehaviour {
 	//	-------------------------------------------
 	//	テキスト表示用
 	//	-------------------------------------------
-	/// <summary>セリフのカウント</summary>
-	int count = 0;
-	/// <summary>１文字ずつ表示するスピード</summary>
-	float drawTextSpeed = 0.01f;
-	/// <summary>クリックしてからの時間</summary>
-	float TimeMeasurement = 0.0f;
-	/// <summary>セリフ格納</summary>
+	//	文字列を格納する
 	string storage = "";
-	/// <summary>文字列が何番目か</summary>
-	int textLenght = 0;
+
+	//	なん文字目を追加してるか
+	private int currentNum = 0;
+	//	String配列
+	private int textLine = 0;
 
 	//	-------------------------------------------
 	//	テキスト(後々ファイル読み込み)
 	//	-------------------------------------------
-	//public TextAsset textData;
-	public string textData;
+	public TextAsset _text;
+	public IEnumerable<string> layoutInfo;
+	private string useText;
+	private int insertNum;
 
-	public List<string> message;
-
-	// Use this for initialization
-	void Start () {
-		textData = "//text/text.txt";
-		message = new List<string> ();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-
-		texiinit ();
-		//	Addで書き出し？
-		message.Add ("textData");
-		message.Add ("texts");
-	}
-
-	void texiinit()
-	{
-		//	ファイル読み込み
-		var date = File.ReadAllText(textData);
-		//	分割
-		IEnumerable<string> texts = date.Split('\n').
-			SelectMany(x => x.Split(',')).ToArray();
-
-		message.Add ("texts");
-	}
-
-	void NovelPart()
-	{
-		if(Input.GetKeyDown(KeyCode.Return))
-		{
-			count ++ ;
-			textLenght = 0;
-
-			if(count >= 100)
-			{
-
-			}
-		}
-		TimeMeasurement += Time.deltaTime;
-
-		if(TimeMeasurement > drawTextSpeed)
-		{
-			if(count == 1)
-			{
-				if(message[0].Length <= textLenght)
-				{
-					storage += message[0].Substring(textLenght,1);
-				}
-			}
-			textLenght++;
-			TimeMeasurement = 0.0f;
-		}
-
-
-
-	}
+	//layoutInfo.elemtnat(textline) == string text[textline]; 
 
 	void OnGUI()
 	{
 		GUI.depth = Depth;
-
+		
 		float sw = Screen.width;
 		float sh = Screen.height;
-
+		
 		//	文字列表示
 		Rect mozi = new Rect (sw /2 -180, sh /2 + 120, sw / 2, sh / 2);
 		GUI.Label (mozi, storage, LabelStyle);
 	}
-	*/
+
+	// Use this for initialization
+	void Start()
+	{
+		this.readText ();
+
+		textLine = 0;
+
+		currentNum = 0;
+
+		insertNum = 0;
+
+		useText = layoutInfo.ElementAt (textLine);
+		textLine++;
+	}
+	
+	void readText()
+	{
+		layoutInfo = _text.text.Split ('\n');
+		//1行をもう一度分割する
+
+	}
+
+	// Update is called once per frame
+	void Update () {
+		NovelPart ();
+	}
+
+	void NovelPart()
+	{
+		if(Input.GetMouseButtonDown(0))
+		{
+			if(useText.Count() <= storage.Count())
+			{
+				//　次の行の準備
+				//	UseTextに１行追加する
+				useText = layoutInfo.ElementAt(textLine);
+				
+				//　表示するTEXTを初期化する
+				storage = "";
+				
+				//　usetextからstorageに対して追加する文字の番号を初期化
+				currentNum = 0;
+				insertNum = 0;
+				//次に読み込む行を指定
+				textLine++;
+			}else{
+
+				//　全文字をusetextからstorageへcopy
+				if( insertNum >= 30 ) 
+				{
+					storage = useText;
+					currentNum = useText.Count();
+				}
+			}
+
+			if(textLine >= 200)
+			{
+				FadeManager.Instance.LoadLevel("Stage1",1.0f);
+			}
+		}
+
+		if(currentNum < useText.Count())
+		{
+			//　storageに対してusetextから一文字を追加する
+			storage += useText[currentNum];
+			if( insertNum >= 25 ) 
+			{
+				if(currentNum + 1 < useText.Count())
+				{
+					if(useText[currentNum + 1] != '。')
+					{
+						storage += '\n';
+					}
+				}
+				insertNum = 0;
+			}
+			
+			//　次の文字を追加するための準備
+			currentNum++;
+			insertNum++;
+
+		}
+
+	}
+
+
 }

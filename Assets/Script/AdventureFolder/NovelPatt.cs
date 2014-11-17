@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class NovelPatt : MonoBehaviour {
+	/*
 	//	画像表示順
 	public int Depth = 0;
 
@@ -30,11 +31,22 @@ public class NovelPatt : MonoBehaviour {
 	//	後々テキスト読み込み化
 	//	-------------------------------------------
 	/// <summary>主人公</summary>
-	string[] yuukuText = {"ただいまー",""};
+	string[] NoClearPart = {
+		"ただいまー",
+		"お兄ちゃん、お帰り!","お帰りなさい、ユークさん。\nお邪魔しています。",
+		"？　ネネア、彼女は？","ミリアさんだよ。\nお兄ちゃんに用があるんだって！",
+		"初めまして、兄のユークです。\n俺に用って、何ですか？",
+		"…ネネアちゃん、すみません。どこか人を気にせず話せる場所はありませんか？",
+		"この家使っても大丈夫ですよ。お母さんたちはしばらく帰ってこないだろうし\nわたしも夕飯の買い出しに行くので！",
+		"",
+		"ネネア！グラタンがいい！","行ってらっしゃい、ミリア。気をつけるんだぞ。","それで、話って何ですか？",
+		"ええと…、どういうことですか？","まあ、旅の間に何度か見かけましたけど…。\nそれが何か関係あるんですか？",
+		"そ、そうなんですか。","（いきなり熱くなった…。）","いや、無理です。\nお引き取り下さい。","そうは言われても…"
+		};
 	/// <summary>妹</summary>
-	string[] neneaText = {"お兄ちゃん、お帰り!",};
+	//string[] neneaText = {,"ミリアさんだよ。\nお兄ちゃんに用があるんだって！"};
 	/// <summary>主人公</summary>
-	string[] miriaText = {"お帰りなさい、ユークさん。お邪魔しています。",};
+	//string[] miriaText = {};
 
 	void OnGUI()
 	{
@@ -62,7 +74,7 @@ public class NovelPatt : MonoBehaviour {
 	/// <summary>会話を流す関数</summary>
 	void Conversation()
 	{
-		if(Input.GetKeyDown(KeyCode.Return))
+		if(Input.GetMouseButtonDown(0))
 		{
 			//	会話を流す
 			count ++;
@@ -81,25 +93,25 @@ public class NovelPatt : MonoBehaviour {
 		{
 			if(count == 0)
 			{
-				if(yuukuText[0].Length > textLenght)
+				//if(yuukuText[0].Length > textLenght)
 				{
-					storage += yuukuText[0].Substring(textLenght,1);
+				//	storage += yuukuText[0].Substring(textLenght,1);
 				}
 			}
 
 			if(count == 1)
 			{
-				if(neneaText[0].Length > textLenght)
+			//	if(neneaText[0].Length > textLenght)
 				{
-					storage += neneaText[0].Substring(textLenght,1);
+				//	storage += neneaText[0].Substring(textLenght,1);
 				}
 			}
 
 			if(count == 2)
 			{
-				if(miriaText[0].Length > textLenght)
+			//	if(miriaText[0].Length > textLenght)
 				{
-					storage += miriaText[0].Substring(textLenght,1);
+			//		storage += miriaText[0].Substring(textLenght,1);
 				}
 			}
 			textLenght ++;
@@ -109,7 +121,7 @@ public class NovelPatt : MonoBehaviour {
 
 	}
 
-
+*/
 
 
 }

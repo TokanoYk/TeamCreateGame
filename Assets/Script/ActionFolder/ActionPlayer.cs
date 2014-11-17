@@ -42,6 +42,9 @@ public class ActionPlayer : MonoBehaviour {
 	private float onScaffoldingForse = 2.5f;
 	//	プレイヤーの体力.
 	public int LifePoint = 10;
+	//	【言葉】のカウント.
+	public int words = 0;
+
 	//	攻撃力.
 	public int attackPower = 1;
 
@@ -201,26 +204,6 @@ public class ActionPlayer : MonoBehaviour {
 			}
 		}
 	}
-
-	/*
-	void OnTriggerEnter2D(Collider2D coll)
-	{
-		//	BoxCollでダメージ判定を取る.
-		//	敵やボス,攻撃,障害物にぶつかったら攻撃を食らう.
-		if(coll.gameObject.tag == "Enemy" || coll.gameObject.tag == "Boss" ||
-		   coll.gameObject.tag == "BossAttack" || coll.gameObject.tag == "Obstacle")
-		{
-			//	ダメージフラグをtrueにする.
-			damageFlag = true;
-			if(damageFlag)
-			{
-				Damage();
-			}
-		}
-
-
-	}
-	*/
 
 	/// <summary>敵に攻撃された時に呼ぶ関数</summary>
 	void Damage () 

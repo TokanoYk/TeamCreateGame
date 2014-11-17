@@ -50,17 +50,14 @@
      <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\libs\utils.txt" />
      <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\libs\save.txt" />
      <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\title.txt" />
-     <None Include="Assets\SU3DJPFont\list.txt" />
      <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\scene1.txt" />
+     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\ClearScene.txt" />
      <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\system.txt" />
      <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\libs\config.txt" />
-     <None Include="Assets\SU3DJPFont\readme_jp.txt" />
-     <None Include="Assets\SU3DJPFont\license.txt" />
-     <None Include="Assets\SU3DJPFont\readme.txt" />
      <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\libs\menu.txt" />
      <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\first.txt" />
-     <None Include="Assets\SU3DJPFont\license_jp.txt" />
      <None Include="Assets\JOKER_GAME\Resources\novel\data\config\config.txt" />
+     <None Include="Assets\JOKER_GAME\Resources\novel\data\clearconfig\clearconfig.txt" />
  <Reference Include="LitJson">
  <HintPath>C:/Users/vantan/Desktop/Story Tale/Assets/JOKER_GAME/Plugins/LitJson.dll</HintPath>
  </Reference>

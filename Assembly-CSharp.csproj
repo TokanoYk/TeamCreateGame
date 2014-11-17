@@ -46,93 +46,28 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\JOKER\Scripts\Novel\Components\AnimComponent.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\Components\AudioComponent.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\Components\BgComponent.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\Components\CharaComponent.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\Components\ClickableComponent.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\Components\Components.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\Components\Doc.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\Components\EventComponent.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\Components\ImageComponent.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\Components\MenuComponent.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\Components\MessageComponent.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\Components\SaveComponent.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\Components\SdComponentScript.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\Components\SystemComponent.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\Components\TextComponent.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\Core\AudioManager.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\Core\Enum.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\Core\EventManager.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\Core\GameManager.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\Core\GameSetting.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\Core\GameView.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\Core\ImageManager.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\Core\LogManager.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\Core\NovelSingleton.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\Core\SaveManager.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\Core\ScenarioManager.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\Core\StatusManager.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\Core\Validate.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\Libs\ColorConverter.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\Libs\GuiScaler.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\Libs\MiniJSON.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\Libs\RPNParser.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\Libs\iTween.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\ObjectSet\AbstractObject.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\ObjectSet\ClickableObject.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\ObjectSet\ImageObject.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\ObjectSet\SdObject.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\ObjectSet\TextObject.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\SceneInit.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\System\FileManager.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\System\Parser.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\Unity\AnimationEvent.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\Unity\Backlog.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\Unity\CameraUtility.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\Unity\CloseButton.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\Unity\MessageArea.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\Unity\MessageFrame.cs" />
-     <Compile Include="Assets\JOKER\Scripts\Novel\Unity\PlaneEvent.cs" />
-     <Compile Include="Assets\JOKER_GAME\Plugins\GoComponent.cs" />
      <Compile Include="Assets\Script\ActionFolder\ActionPlayer.cs" />
      <Compile Include="Assets\Script\ActionFolder\Attack.cs" />
      <Compile Include="Assets\Script\ActionFolder\BossBattleStart.cs" />
      <Compile Include="Assets\Script\ActionFolder\ChildColliderTrigger.cs" />
      <Compile Include="Assets\Script\ActionFolder\DrawLifePoint.cs" />
+     <Compile Include="Assets\Script\ActionFolder\DrawWordsCounter.cs" />
      <Compile Include="Assets\Script\ActionFolder\Enemy\AppearanceBoss.cs" />
      <Compile Include="Assets\Script\ActionFolder\Enemy\BossAttack.cs" />
      <Compile Include="Assets\Script\ActionFolder\Enemy\BossAttackLaunch.cs" />
      <Compile Include="Assets\Script\ActionFolder\Enemy\BossDamage.cs" />
      <Compile Include="Assets\Script\ActionFolder\Enemy\DamageEnemy.cs" />
+     <Compile Include="Assets\Script\ActionFolder\Enemy\DeathBoss.cs" />
      <Compile Include="Assets\Script\ActionFolder\SetScaffolding.cs" />
      <Compile Include="Assets\Script\ActionFolder\StageMove.cs" />
+     <Compile Include="Assets\Script\AdventureFolder\MouseCursor.cs" />
      <Compile Include="Assets\Script\AdventureFolder\NovelPatt.cs" />
      <Compile Include="Assets\Script\AdventureFolder\Text.cs" />
      <Compile Include="Assets\Script\BasicScript\FadeManager.cs" />
      <Compile Include="Assets\Script\BasicScript\SingletonMonoBehaviour.cs" />
      <Compile Include="Assets\Script\Player.cs" />
      <Compile Include="Assets\Script\Title.cs" />
-     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\libs\utils.txt" />
-     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\libs\save.txt" />
-     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\title.txt" />
-     <None Include="Assets\SU3DJPFont\list.txt" />
-     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\scene1.txt" />
-     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\system.txt" />
-     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\libs\config.txt" />
-     <None Include="Assets\SU3DJPFont\readme_jp.txt" />
-     <None Include="Assets\SU3DJPFont\license.txt" />
-     <None Include="Assets\SU3DJPFont\readme.txt" />
-     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\libs\menu.txt" />
-     <None Include="Assets\JOKER_GAME\Resources\novel\data\scenario\first.txt" />
-     <None Include="Assets\SU3DJPFont\license_jp.txt" />
-     <None Include="Assets\JOKER_GAME\Resources\novel\data\config\config.txt" />
- <Reference Include="LitJson">
- <HintPath>C:/Users/vantan/Desktop/Story Tale/Assets/JOKER_GAME/Plugins/LitJson.dll</HintPath>
- </Reference>
- <Reference Include="NCalc">
- <HintPath>C:/Users/vantan/Desktop/Story Tale/Assets/JOKER_GAME/Plugins/NCalc.dll</HintPath>
- </Reference>
+     <None Include="Assets\Script\AdventureFolder\FirstStory.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

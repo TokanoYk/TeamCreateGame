@@ -15,9 +15,11 @@ public class BossDamage : MonoBehaviour {
 	//	-------------------------------------------
 	public GameObject Player;
 	private ActionPlayer _player;
+
 	//	点滅処理のレンダー
 	private SpriteRenderer _renderer;
-	
+
+
 	//	-------------------------------------------
 	//	判定用
 	//	-------------------------------------------
@@ -39,6 +41,7 @@ public class BossDamage : MonoBehaviour {
 	void Start () {
 		_player = Player.GetComponent<ActionPlayer> ();
 		_renderer = gameObject.GetComponent<SpriteRenderer> ();
+
 		Life = 3;
 	}
 	
@@ -94,6 +97,8 @@ public class BossDamage : MonoBehaviour {
 			//DrawParticle();
 			battleFinish = true;
 			GetComponent<Animator>().SetBool("BattleFinish",battleFinish);
+
+			Application.LoadLevel("ClearNovelPart");
 		}
 	}
 }

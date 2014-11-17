@@ -12,6 +12,9 @@ public class DamageEnemy : MonoBehaviour {
 	//	-------------------------------------------
 	public GameObject PlayerObject;
 	private ActionPlayer _player;
+	public GameObject WordObject;
+	private DrawWordsCounter _words;
+
 
 	//	-------------------------------------------
 	//	ステータス
@@ -26,6 +29,7 @@ public class DamageEnemy : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		_player = PlayerObject.GetComponent<ActionPlayer> ();
+		_words = WordObject.GetComponent<DrawWordsCounter> ();
 		Life = 1;
 	}
 	
@@ -39,6 +43,7 @@ public class DamageEnemy : MonoBehaviour {
 	{
 		if(coll.gameObject.tag == "Attack" || coll.gameObject.tag == "Player")
 		{
+			_words.words ++;
 			Life -= _player.attackPower;
 			Destroy(gameObject);
 			Dead ();
@@ -58,6 +63,7 @@ public class DamageEnemy : MonoBehaviour {
 	{
 		if(Life <= 0)
 		{
+
 			DrawParticle();
 			Destroy(gameObject);
 		}
