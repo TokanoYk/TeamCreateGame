@@ -8,7 +8,7 @@ public class BossDamage : MonoBehaviour {
 	//	ゲームオブジェクトの指定
 	//	-------------------------------------------
 	//	パーティクルの指定
-	//public GameObject DeathParticle; 
+	//public GameObject DeathParticle;
 
 	//	-------------------------------------------
 	//	GetComponent用
@@ -34,7 +34,7 @@ public class BossDamage : MonoBehaviour {
 	//	体力
 	public int Life = 3;
 	//	攻撃力
-	public int AttackPower = 1;
+	public int AttackPower = 45;
 
 
 	// Use this for initialization
@@ -96,9 +96,15 @@ public class BossDamage : MonoBehaviour {
 			//Destroy(gameObject);
 			//DrawParticle();
 			battleFinish = true;
-			GetComponent<Animator>().SetBool("BattleFinish",battleFinish);
 
-			Application.LoadLevel("ClearNovelPart");
+			GetComponent<Animator>().SetBool("BattleFinish",battleFinish);
+			Invoke("ChangeStage",2f);
 		}
 	}
+
+	void ChangeStage()
+	{
+		FadeManager.Instance.LoadLevel("ClearNovelPart",3.0f);
+	}
+
 }

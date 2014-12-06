@@ -21,7 +21,7 @@ public class DamageEnemy : MonoBehaviour {
 	//	-------------------------------------------
 	//	体力
 	private int Life = 1;
-	public int enemyAttackPower = 1;
+	public int enemyAttackPower = 30;
 
 	//	死んでいるかどうか
 	//private bool dead = false;

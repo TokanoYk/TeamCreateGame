@@ -29,6 +29,8 @@ public class ActionPlayer : MonoBehaviour {
 	//	アニメーションのフラグ.
 	private bool animationAttack = false;
 	private bool animationJumpAttack = false;
+	private bool animationDash = true;
+	private bool animationStop = false;
 
 	private bool OnScaffolding = false;
 
@@ -41,7 +43,7 @@ public class ActionPlayer : MonoBehaviour {
 	//	足場に乗っていた場合のジャンプ力.
 	private float onScaffoldingForse = 2.5f;
 	//	プレイヤーの体力.
-	public int LifePoint = 10;
+	public int LifePoint = 300;
 	//	【言葉】のカウント.
 	public int words = 0;
 
@@ -59,7 +61,7 @@ public class ActionPlayer : MonoBehaviour {
 		_renderer = gameObject.GetComponent<SpriteRenderer> ();
 
 		//	ステージが始まったら全回復.
-		LifePoint = 10;
+		LifePoint = 300;
 	}
 	
 	// Update is called once per frame
@@ -78,17 +80,33 @@ public class ActionPlayer : MonoBehaviour {
 		//	スクロールが止まったら動けるようになる.
 		if(_stageMove.StageStop)
 		{
+			animationDash = false;
+			animationStop = true;
+
+			GetComponent<Animator>().SetBool("Dash",animationDash);
+			GetComponent<Animator>().SetBool("Stop",animationStop);
+
 			//	右に移動する.
 			if (Input.GetKey (KeyCode.RightArrow))
 			{
 				NewPosition.x += moveSpeed * Time.deltaTime;
+				animationDash = true;
+				GetComponent<Animator>().SetBool("Dash",animationDash);
 			}
 			
 			//	左に移動する.
 			if (Input.GetKey (KeyCode.LeftArrow))
 			{
 				NewPosition.x -= moveSpeed * Time.deltaTime;
+				animationDash = true;
+				GetComponent<Animator>().SetBool("Dash",animationDash);
 			}
+		}
+
+		//	CでClear
+		if(Input.GetKeyDown(KeyCode.C))
+		{
+			FadeManager.Instance.LoadLevel("ClearNovelPart",1.0f);
 		}
 
 		//	Enterでステージが動く.
@@ -142,6 +160,13 @@ public class ActionPlayer : MonoBehaviour {
 			animationJumpAttack = false;
 			GetComponent<Animator>().SetBool("JumpAttack",animationJumpAttack);
 		}
+
+		if(animationStop)
+		{
+			animationStop = true;
+			GetComponent<Animator>().SetBool("Stop",animationStop);
+		}
+
 	}
 
 	/// <summary>プレイヤーのジャンプ関数.</summary>
@@ -209,7 +234,7 @@ public class ActionPlayer : MonoBehaviour {
 	void Damage () 
 	{
 		Debug.Log("Damage!");
-		LifePoint -= 1;
+		LifePoint -= 30;
 
 		// コルーチン開始.
 		StartCoroutine("WaitForIt");

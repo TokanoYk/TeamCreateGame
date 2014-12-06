@@ -1,15 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//	シーンチェンジ
 public class DeathBoss : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
+
 }

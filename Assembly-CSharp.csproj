@@ -60,14 +60,25 @@
      <Compile Include="Assets\Script\ActionFolder\Enemy\DeathBoss.cs" />
      <Compile Include="Assets\Script\ActionFolder\SetScaffolding.cs" />
      <Compile Include="Assets\Script\ActionFolder\StageMove.cs" />
+     <Compile Include="Assets\Script\AdventureFolder\ChangeBackground.cs" />
+     <Compile Include="Assets\Script\AdventureFolder\CharacterManage.cs" />
+     <Compile Include="Assets\Script\AdventureFolder\ClearNovelPart.cs" />
+     <Compile Include="Assets\Script\AdventureFolder\ClearText.cs" />
+     <Compile Include="Assets\Script\AdventureFolder\DrawMiria.cs" />
+     <Compile Include="Assets\Script\AdventureFolder\DrawMoth.cs" />
+     <Compile Include="Assets\Script\AdventureFolder\DrawName.cs" />
+     <Compile Include="Assets\Script\AdventureFolder\DrawNenea.cs" />
+     <Compile Include="Assets\Script\AdventureFolder\DrawYuuku.cs" />
      <Compile Include="Assets\Script\AdventureFolder\MouseCursor.cs" />
      <Compile Include="Assets\Script\AdventureFolder\NovelPatt.cs" />
      <Compile Include="Assets\Script\AdventureFolder\Text.cs" />
      <Compile Include="Assets\Script\BasicScript\FadeManager.cs" />
      <Compile Include="Assets\Script\BasicScript\SingletonMonoBehaviour.cs" />
      <Compile Include="Assets\Script\Player.cs" />
+     <Compile Include="Assets\Script\StageSelect.cs" />
      <Compile Include="Assets\Script\Title.cs" />
-     <None Include="Assets\Script\AdventureFolder\FirstStory.txt" />
+     <None Include="Assets\Script\AdventureFolder\Scenarios\FirstStory.txt" />
+     <None Include="Assets\Script\AdventureFolder\Scenarios\ClearStory.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

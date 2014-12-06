@@ -9,19 +9,10 @@ public class BossBattleStart : MonoBehaviour {
 
 	private bool Once = true;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
 	void OnTriggerExit2D(Collider2D coll)
 	{
-		//	生成ゾーンでジャンプされたら生成する
+		//	生成ゾーンから出たら背後に壁が出来る
 		if(coll.gameObject.tag == "Player")
 		{
 			CreateWall();
