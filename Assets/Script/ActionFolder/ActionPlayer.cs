@@ -29,7 +29,7 @@ public class ActionPlayer : MonoBehaviour {
 	//	アニメーションのフラグ.
 	private bool animationAttack = false;
 	private bool animationJumpAttack = false;
-	private bool animationDash = true;
+//	private bool animationDash = true;
 	private bool animationStop = false;
 
 	private bool OnScaffolding = false;
@@ -80,26 +80,26 @@ public class ActionPlayer : MonoBehaviour {
 		//	スクロールが止まったら動けるようになる.
 		if(_stageMove.StageStop)
 		{
-			animationDash = false;
-			animationStop = true;
+			//animationDash = false;
+			//animationStop = true;
 
-			GetComponent<Animator>().SetBool("Dash",animationDash);
-			GetComponent<Animator>().SetBool("Stop",animationStop);
+			//GetComponent<Animator>().SetBool("Dash",animationDash);
+			//GetComponent<Animator>().SetBool("Stop",animationStop);
 
 			//	右に移動する.
 			if (Input.GetKey (KeyCode.RightArrow))
 			{
 				NewPosition.x += moveSpeed * Time.deltaTime;
-				animationDash = true;
-				GetComponent<Animator>().SetBool("Dash",animationDash);
+				//animationDash = true;
+				//GetComponent<Animator>().SetBool("Dash",animationDash);
 			}
 			
 			//	左に移動する.
 			if (Input.GetKey (KeyCode.LeftArrow))
 			{
 				NewPosition.x -= moveSpeed * Time.deltaTime;
-				animationDash = true;
-				GetComponent<Animator>().SetBool("Dash",animationDash);
+				//animationDash = true;
+				//GetComponent<Animator>().SetBool("Dash",animationDash);
 			}
 		}
 

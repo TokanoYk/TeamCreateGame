@@ -12,9 +12,12 @@ public class DamageEnemy : MonoBehaviour {
 	//	-------------------------------------------
 	public GameObject PlayerObject;
 	private ActionPlayer _player;
+
+	public GameObject WordAnimationObject;
+	private WordAnimation _wordanimation;
+
 	public GameObject WordObject;
 	private DrawWordsCounter _words;
-
 
 	//	-------------------------------------------
 	//	ステータス
@@ -24,12 +27,14 @@ public class DamageEnemy : MonoBehaviour {
 	public int enemyAttackPower = 30;
 
 	//	死んでいるかどうか
-	//private bool dead = false;
+	public bool dead = false;
 
 	// Use this for initialization
 	void Start () {
 		_player = PlayerObject.GetComponent<ActionPlayer> ();
 		_words = WordObject.GetComponent<DrawWordsCounter> ();
+		_wordanimation = WordAnimationObject.GetComponent<WordAnimation> ();
+
 		Life = 1;
 	}
 	
@@ -63,10 +68,10 @@ public class DamageEnemy : MonoBehaviour {
 	{
 		if(Life <= 0)
 		{
-
+			//dead = true;
+			_wordanimation.off = false;
 			DrawParticle();
 			Destroy(gameObject);
 		}
 	}
-
 }

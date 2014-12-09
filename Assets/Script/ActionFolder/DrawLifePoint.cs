@@ -18,7 +18,7 @@ public class DrawLifePoint : MonoBehaviour {
 
 	void DrawHp()
 	{
-		guiText.text = "<Color=black>読者数：" + _player.LifePoint.ToString() + "</Color>";
+		guiText.text = "<Color=black>読者数：" + _player.LifePoint.ToString() + "人</Color>";
 
 	}
 }
