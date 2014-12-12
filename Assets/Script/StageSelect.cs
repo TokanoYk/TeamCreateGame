@@ -3,6 +3,10 @@ using System.Collections;
 
 public class StageSelect : MonoBehaviour {
 
+	//	宣言
+	SpriteRenderer ChapterBack;
+
+
 	//	シナリオタイトルのテクスチャ
 	public Texture2D ScenarioTitleRed;
 	public Texture2D ScenarioTitleBlue;
@@ -12,6 +16,9 @@ public class StageSelect : MonoBehaviour {
 	public Texture2D Cursor;
 
 	//	表示している章ごとにキャラクターの画像を表示する
+	public Sprite ChapterOne;
+	public Sprite ChapterTwo;
+
 
 	//	合わせているステージ
 	int Stage = 0;
@@ -21,12 +28,13 @@ public class StageSelect : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		ChapterBack = gameObject.GetComponent<SpriteRenderer> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		Select ();
+		DrawingBackground ();
 	}
 
 	void Select()
@@ -103,4 +111,13 @@ public class StageSelect : MonoBehaviour {
 			}
 		}
 	}
+
+	void DrawingBackground()
+	{
+		if (Stage == 0)
+			ChapterBack.sprite = ChapterOne;
+		if (Stage == 1)
+			ChapterBack.sprite = ChapterTwo;
+	}
+
 }

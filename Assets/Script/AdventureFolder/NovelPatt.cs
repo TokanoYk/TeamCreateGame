@@ -31,6 +31,14 @@ public class NovelPatt : MonoBehaviour {
 	public GameObject NameBoxObject;
 
 	//	-------------------------------------------
+	//	オーディオ関連
+	//	-------------------------------------------
+	public AudioClip door;
+	public AudioClip dash;
+
+	bool one = false;
+
+	//	-------------------------------------------
 	//	テキスト表示用
 	//	-------------------------------------------
 	/// <summary>セリフのカウント</summary>
@@ -173,6 +181,12 @@ public class NovelPatt : MonoBehaviour {
 				_namebox.yuukuName = true;
 				_yuuku.smile = true;
 
+				if(!one)
+				{
+					audio.PlayOneShot(door);
+					one = true;
+				}
+
 				if(TextData[1].Length > textLenght)
 				{
 					storage += TextData[1].Substring(textLenght,1);
@@ -186,6 +200,8 @@ public class NovelPatt : MonoBehaviour {
 				_namebox.neneaName = true;
 
 				_nenea.happy = true;
+
+				one = false;
 
 				if(TextData[2].Length > textLenght)
 				{
@@ -382,6 +398,12 @@ public class NovelPatt : MonoBehaviour {
 				_yuuku.smile = false;
 				_yuuku.question = true;
 
+				if(!one)
+				{
+					one = true;
+					audio.PlayOneShot(door);
+				}
+
 				if(TextData[16].Length > textLenght)
 				{
 					storage += TextData[16].Substring(textLenght,1);
@@ -391,6 +413,9 @@ public class NovelPatt : MonoBehaviour {
 			//	ミ：旅から
 			if(count == 17)
 			{
+
+				one = false;
+
 				_namebox.yuukuName = false;
 				_namebox.miriaName = true;
 
@@ -781,6 +806,8 @@ public class NovelPatt : MonoBehaviour {
 				_nenea.help = false;
 				_nenea.cry = true;
 
+				one = false;
+
 				if(TextData[46].Length > textLenght)
 				{
 					storage += TextData[46].Substring(textLenght,1);
@@ -802,6 +829,12 @@ public class NovelPatt : MonoBehaviour {
 				_yuuku.mortifying = false;
 				_yuuku.impatience = true;
 
+				if(!one)
+				{
+					audio.PlayOneShot(door);
+					one = true;
+				}
+
 				if(TextData[47].Length > textLenght)
 				{
 					storage += TextData[47].Substring(textLenght,1);
@@ -813,6 +846,9 @@ public class NovelPatt : MonoBehaviour {
 			{
 				_yuuku.impatience = false;
 				_yuuku.mortifying = true;
+
+				one = false;
+
 				if(TextData[48].Length > textLenght)
 				{
 					storage += TextData[48].Substring(textLenght,1);
@@ -828,6 +864,12 @@ public class NovelPatt : MonoBehaviour {
 				_yuuku.mortifying = false;
 				_yuuku.impatience = true;
 
+				if(!one)
+				{
+					audio.PlayOneShot(door);
+					one = true;
+				}
+
 				if(TextData[49].Length > textLenght)
 				{
 					storage += TextData[49].Substring(textLenght,1);
@@ -840,6 +882,9 @@ public class NovelPatt : MonoBehaviour {
 				_yuuku.impatience = false;
 				_yuuku.mortifying = true;
 
+				one = false;
+
+
 				if(TextData[50].Length > textLenght)
 				{
 					storage += TextData[50].Substring(textLenght,1);
@@ -849,6 +894,12 @@ public class NovelPatt : MonoBehaviour {
 			//	ユ：くそ！
 			if(count == 51)
 			{
+				if(!one)
+				{
+					audio.PlayOneShot(dash);
+					one = true;
+				}
+
 				if(TextData[51].Length > textLenght)
 				{
 					storage += TextData[51].Substring(textLenght,1);

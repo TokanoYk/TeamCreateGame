@@ -8,7 +8,7 @@ public class StageMove : MonoBehaviour {
 	//	ステータス
 	//	-------------------------------------------
 	//	ステージのスクロール速度
-	private float moveSpeed = 2.3f;
+	private float moveSpeed = 2.4f;
 
 	//	-------------------------------------------
 	//	判定用

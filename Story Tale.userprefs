@@ -1,8 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\StageSelect.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\AdventureFolder\NovelPatt.cs">
     <Files>
-      <File FileName="Assets\Script\StageSelect.cs" Line="14" Column="29" />
+      <File FileName="Assets\Script\StageSelect.cs" Line="112" Column="4" />
+      <File FileName="Assets\Script\Title.cs" Line="50" Column="53" />
+      <File FileName="Assets\Script\AdventureFolder\NovelPatt.cs" Line="801" Column="19" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
