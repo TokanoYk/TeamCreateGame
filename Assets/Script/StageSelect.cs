@@ -4,9 +4,14 @@ using System.Collections;
 public class StageSelect : MonoBehaviour {
 
 	//	シナリオタイトルのテクスチャ
-	public Texture2D ScenarioTitle;
+	public Texture2D ScenarioTitleRed;
+	public Texture2D ScenarioTitleBlue;
+	public Texture2D ScenarioTitleGreen;
+
 	//	カーソル
 	public Texture2D Cursor;
+
+	//	表示している章ごとにキャラクターの画像を表示する
 
 	//	合わせているステージ
 	int Stage = 0;
@@ -78,33 +83,24 @@ public class StageSelect : MonoBehaviour {
 		if(!OnKey)
 		{
 			//	１
-			GUI.Label (new Rect (sw / 2 - 180 , sh / 2 - 150, 300, 100), ScenarioTitle);
+			GUI.Label (new Rect (sw / 2 - 170 , sh / 2 - 60, 340, 100), ScenarioTitleRed);
 			//	２
-			GUI.Label (new Rect (sw / 2 - 180 , sh / 2 - 30  , 300, 100), ScenarioTitle);
+			GUI.Label (new Rect (sw / 2 - 170 , sh / 2 + 30, 340, 100), ScenarioTitleBlue);
 			//	３
-			GUI.Label (new Rect (sw / 2 - 180 , sh / 2 + 90 , 300, 100), ScenarioTitle);
+			GUI.Label (new Rect (sw / 2 - 170 , sh / 2 + 120, 340, 100), ScenarioTitleGreen);
 
 			if(Stage == 0)
 			{
-				GUI.Label (new Rect (sw / 2 - 250 , sh / 2 - 140, 50, 50), Cursor);
+				GUI.Label (new Rect (sw / 2 - 230 , sh / 2 - 50, 50, 50), Cursor);
 			}
 			if(Stage == 1)
 			{
-				GUI.Label (new Rect (sw / 2 - 250 , sh / 2 - 20, 50, 50), Cursor);
+				GUI.Label (new Rect (sw / 2 - 230 , sh / 2 + 50, 50, 50), Cursor);
 			}
 			if(Stage == 2)
 			{
-				GUI.Label (new Rect (sw / 2 - 250 , sh / 2  + 110, 50, 50), Cursor);
+				GUI.Label (new Rect (sw / 2 - 230 , sh / 2  + 135, 50, 50), Cursor);
 			}
 		}
 	}
-	/*
-    void OnTriggerStay2D(Collider2D coll)
-    {
-        if (coll.gameObject.tag == "Stage1")
-        {
-            FadeManager.Instance.LoadLevel("Stage1", 1.0f);
-        }
-    }
-	*/
 }

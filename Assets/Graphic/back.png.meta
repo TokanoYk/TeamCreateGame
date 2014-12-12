@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7c9e177636b899b4596b2b40ef3f7ac7
+guid: 77a8f30b737ed5f458e5f3648a25c2e2
 TextureImporter:
   fileIDToRecycleName: {}
   serializedVersion: 2
@@ -37,7 +37,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 60
+  spritePixelsToUnits: 50
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
