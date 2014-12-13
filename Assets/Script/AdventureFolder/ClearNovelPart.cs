@@ -21,6 +21,14 @@ public class ClearNovelPart : MonoBehaviour {
 	private DrawName _namebox;
 	public GameObject NameBoxObject;
 
+
+	//	-------------------------------------------
+	//	オーディオ関連
+	//	-------------------------------------------
+	public AudioClip dash;
+	
+	bool one = false;
+
 	//	-------------------------------------------
 	//	テキスト表示用
 	//	-------------------------------------------
@@ -82,12 +90,6 @@ public class ClearNovelPart : MonoBehaviour {
 	/// <summary>会話を流す関数</summary>
 	void Conversation()
 	{
-		//	Sを押すとスキップ
-		//if(Input.GetKeyDown(KeyCode.S))
-		//{
-		//	FadeManager.Instance.LoadLevel("Stage1",1.0f);
-		//}
-		
 		//if(Input.GetMouseButtonDown(0))
 		if(Input.GetKeyDown(KeyCode.Return))
 		{
@@ -138,6 +140,12 @@ public class ClearNovelPart : MonoBehaviour {
 				
 				_miria.impatience = true;
 
+				if(!one)
+				{
+					audio.PlayOneShot(dash);
+					one = true;
+				}
+
 				if(TextData[1].Length > textLenght)
 				{
 					storage += TextData[1].Substring(textLenght,1);
@@ -152,6 +160,8 @@ public class ClearNovelPart : MonoBehaviour {
 				
 				_yuuku.mortifying = false;
 				_yuuku.cry = true;
+
+				one = false;
 
 				if(TextData[2].Length > textLenght)
 				{

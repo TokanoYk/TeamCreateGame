@@ -26,6 +26,10 @@ public class DamageEnemy : MonoBehaviour {
 	private int Life = 1;
 	public int enemyAttackPower = 30;
 
+	private float FlySpeed = 20f;
+	private float Fly = 10f;
+	private float y = 0.0f;
+
 	//	死んでいるかどうか
 	public bool dead = false;
 
@@ -50,13 +54,15 @@ public class DamageEnemy : MonoBehaviour {
 		{
 			_words.words ++;
 			Life -= _player.attackPower;
-			Destroy(gameObject);
+			//Destroy(gameObject);
 			Dead ();
 		}
 	}
 	/// <summary>パーティクルを発生させる関数</summary>
 	void DrawParticle()
 	{
+		_wordanimation.off = false;
+
 		//	Particleの発生
 		GameObject instant_object = (GameObject)GameObject.Instantiate(DeathParticle,new Vector3(transform.position.x,transform.position.y,transform.position.z - 2), Quaternion.identity);
 		//	Particleの消去
@@ -66,12 +72,23 @@ public class DamageEnemy : MonoBehaviour {
 	/// <summary>プレイヤーが死んだ時の関数</summary>
 	void Dead()
 	{
+		//	場所を格納
+		Vector2 NewPosition = transform.position ;
+
 		if(Life <= 0)
 		{
 			//dead = true;
-			_wordanimation.off = false;
-			DrawParticle();
-			Destroy(gameObject);
+
+			//DrawParticle();
+			//	斜め上に飛んで行く
+			//	飛んでいったあとに敵をデストロイ
+			//	デストロイした後に花火的なパーティクル
+			rigidbody2D.velocity = new Vector2 (FlySpeed, y += Fly);
+			Invoke("DrawParticle",0.3f);
+			Destroy(gameObject,0.3f);
+
 		}
+		//	場所の上書き
+		transform.position = NewPosition;
 	}
 }

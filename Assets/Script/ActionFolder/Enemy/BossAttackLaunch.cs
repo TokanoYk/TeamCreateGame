@@ -13,6 +13,7 @@ public class BossAttackLaunch : MonoBehaviour {
 	//	斜め打ち用
 	private float y = 0.0f;
 	private float fallSpead1 = 0.03f;
+	private float fallSpead2 = 0.07f;
 
 	public bool bullet1, bullet2, bullet3 = false;
 
@@ -52,7 +53,7 @@ public class BossAttackLaunch : MonoBehaviour {
 
 		if(bullet3)
 		{
-			rigidbody2D.velocity = new Vector2 (-bulletSpeed, y -= 0.07f);
+			rigidbody2D.velocity = new Vector2 (-bulletSpeed, y -= fallSpead2);
 		}
 		//	場所の上書き
 		transform.position = NewPosition;

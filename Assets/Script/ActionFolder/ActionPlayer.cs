@@ -35,6 +35,11 @@ public class ActionPlayer : MonoBehaviour {
 	private bool OnScaffolding = false;
 
 	//	-------------------------------------------
+	//	オーディオ関連
+	//	-------------------------------------------
+	public AudioClip slash;
+
+	//	-------------------------------------------
 	//	ステータス.
 	//	-------------------------------------------
 	[SerializeField]
@@ -129,6 +134,8 @@ public class ActionPlayer : MonoBehaviour {
 		//	攻撃.
 		if(Input.GetKeyDown(KeyCode.Space))
 		{
+			//	slashはslashだけの音スクリプト作ってアニメーションでPlayする
+
 			_attack.SetAttack();
 			animationAttack = true;
 
