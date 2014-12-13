@@ -6,6 +6,8 @@ public class StageSelect : MonoBehaviour {
 	//	宣言
 	SpriteRenderer ChapterBack;
 
+	//	サウンド
+	public AudioClip Page;
 
 	//	シナリオタイトルのテクスチャ
 	public Texture2D ScenarioTitleRed;
@@ -65,6 +67,7 @@ public class StageSelect : MonoBehaviour {
 		{
 			if(Stage == 0)
 			{
+				audio.PlayOneShot(Page);
 				FadeManager.Instance.LoadLevel("NovelPart", 1.0f);
 				OnKey = true;
 			}

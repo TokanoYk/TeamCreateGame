@@ -37,7 +37,7 @@ public class ActionPlayer : MonoBehaviour {
 	//	-------------------------------------------
 	//	オーディオ関連
 	//	-------------------------------------------
-	public AudioClip slash;
+	//public AudioClip slash;
 
 	//	-------------------------------------------
 	//	ステータス.

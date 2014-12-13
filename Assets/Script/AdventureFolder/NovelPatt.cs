@@ -37,6 +37,7 @@ public class NovelPatt : MonoBehaviour {
 	public AudioClip dash;
 
 	bool one = false;
+	public bool play = false;
 
 	//	-------------------------------------------
 	//	テキスト表示用
@@ -755,6 +756,8 @@ public class NovelPatt : MonoBehaviour {
 			//	ユ：何だこいつ
 			if(count == 43)
 			{
+				play = true;
+
 				_moth.draw = true;
 				//	ネネア移動の変数
 				_nenea.moveOn = true;

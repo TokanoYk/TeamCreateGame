@@ -47,8 +47,10 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Script\ActionFolder\ActionPlayer.cs" />
+     <Compile Include="Assets\Script\ActionFolder\ActionSE.cs" />
      <Compile Include="Assets\Script\ActionFolder\Attack.cs" />
      <Compile Include="Assets\Script\ActionFolder\BossBattleStart.cs" />
+     <Compile Include="Assets\Script\ActionFolder\BossSound.cs" />
      <Compile Include="Assets\Script\ActionFolder\ChildColliderTrigger.cs" />
      <Compile Include="Assets\Script\ActionFolder\DrawLifePoint.cs" />
      <Compile Include="Assets\Script\ActionFolder\DrawWordsCounter.cs" />
@@ -61,6 +63,7 @@
      <Compile Include="Assets\Script\ActionFolder\SetScaffolding.cs" />
      <Compile Include="Assets\Script\ActionFolder\StageMove.cs" />
      <Compile Include="Assets\Script\ActionFolder\WordAnimation.cs" />
+     <Compile Include="Assets\Script\AdventureFolder\ChangeBGM.cs" />
      <Compile Include="Assets\Script\AdventureFolder\ChangeBackground.cs" />
      <Compile Include="Assets\Script\AdventureFolder\CharacterManage.cs" />
      <Compile Include="Assets\Script\AdventureFolder\ClearNovelPart.cs" />
@@ -78,6 +81,7 @@
      <Compile Include="Assets\Script\Player.cs" />
      <Compile Include="Assets\Script\StageSelect.cs" />
      <Compile Include="Assets\Script\Title.cs" />
+     <Compile Include="Assets\Script\UIAnimation.cs" />
      <None Include="Assets\Script\AdventureFolder\Scenarios\FirstStory.txt" />
      <None Include="Assets\Script\AdventureFolder\Scenarios\ClearStory.txt" />
   </ItemGroup>
