@@ -9,6 +9,7 @@ public class StageSelect : MonoBehaviour {
 	//	サウンド
 	public AudioClip Page;
 
+	/*
 	//	シナリオタイトルのテクスチャ
 	public Texture2D ScenarioTitleRed;
 	public Texture2D ScenarioTitleBlue;
@@ -16,6 +17,7 @@ public class StageSelect : MonoBehaviour {
 
 	//	カーソル
 	public Texture2D Cursor;
+	*/
 
 	//	表示している章ごとにキャラクターの画像を表示する
 	public Sprite ChapterOne;
@@ -23,10 +25,10 @@ public class StageSelect : MonoBehaviour {
 
 
 	//	合わせているステージ
-	int Stage = 0;
+	public int Stage = 0;
 
 	//　エンターが押された
-	bool OnKey = false;
+	public bool OnEnter = false;
 
 	// Use this for initialization
 	void Start () {
@@ -69,7 +71,7 @@ public class StageSelect : MonoBehaviour {
 			{
 				audio.PlayOneShot(Page);
 				FadeManager.Instance.LoadLevel("NovelPart", 1.0f);
-				OnKey = true;
+				OnEnter = true;
 			}
 			/*
 			if(Stage == 1)
@@ -85,7 +87,7 @@ public class StageSelect : MonoBehaviour {
 
 		}
 	}
-
+/*
 	void OnGUI()
 	{
 		float sw = Screen.width;
@@ -93,6 +95,7 @@ public class StageSelect : MonoBehaviour {
 
 		if(!OnKey)
 		{
+
 			//	１
 			GUI.Label (new Rect (sw / 2 - 170 , sh / 2 - 60, 340, 100), ScenarioTitleRed);
 			//	２
@@ -114,7 +117,7 @@ public class StageSelect : MonoBehaviour {
 			}
 		}
 	}
-
+*/
 	void DrawingBackground()
 	{
 		if (Stage == 0)

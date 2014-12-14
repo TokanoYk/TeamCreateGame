@@ -79,6 +79,7 @@
      <Compile Include="Assets\Script\BasicScript\FadeManager.cs" />
      <Compile Include="Assets\Script\BasicScript\SingletonMonoBehaviour.cs" />
      <Compile Include="Assets\Script\Player.cs" />
+     <Compile Include="Assets\Script\SelectUIAnimation.cs" />
      <Compile Include="Assets\Script\StageSelect.cs" />
      <Compile Include="Assets\Script\Title.cs" />
      <Compile Include="Assets\Script\UIAnimation.cs" />
