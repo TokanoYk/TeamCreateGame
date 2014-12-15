@@ -47,11 +47,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Script\ActionFolder\ActionPlayer.cs" />
-     <Compile Include="Assets\Script\ActionFolder\ActionSE.cs" />
      <Compile Include="Assets\Script\ActionFolder\Attack.cs" />
      <Compile Include="Assets\Script\ActionFolder\BossBattleStart.cs" />
      <Compile Include="Assets\Script\ActionFolder\BossSound.cs" />
-     <Compile Include="Assets\Script\ActionFolder\ChildColliderTrigger.cs" />
      <Compile Include="Assets\Script\ActionFolder\DrawLifePoint.cs" />
      <Compile Include="Assets\Script\ActionFolder\DrawWordsCounter.cs" />
      <Compile Include="Assets\Script\ActionFolder\Enemy\AppearanceBoss.cs" />
@@ -60,8 +58,11 @@
      <Compile Include="Assets\Script\ActionFolder\Enemy\BossDamage.cs" />
      <Compile Include="Assets\Script\ActionFolder\Enemy\DamageEnemy.cs" />
      <Compile Include="Assets\Script\ActionFolder\Enemy\DeathBoss.cs" />
-     <Compile Include="Assets\Script\ActionFolder\SetScaffolding.cs" />
-     <Compile Include="Assets\Script\ActionFolder\StageMove.cs" />
+     <Compile Include="Assets\Script\ActionFolder\Stage\ActionSE.cs" />
+     <Compile Include="Assets\Script\ActionFolder\Stage\ChildColliderTrigger.cs" />
+     <Compile Include="Assets\Script\ActionFolder\Stage\DestroyZone.cs" />
+     <Compile Include="Assets\Script\ActionFolder\Stage\SetScaffolding.cs" />
+     <Compile Include="Assets\Script\ActionFolder\Stage\StageMove.cs" />
      <Compile Include="Assets\Script\ActionFolder\WordAnimation.cs" />
      <Compile Include="Assets\Script\AdventureFolder\ChangeBGM.cs" />
      <Compile Include="Assets\Script\AdventureFolder\ChangeBackground.cs" />
@@ -78,6 +79,8 @@
      <Compile Include="Assets\Script\AdventureFolder\Text.cs" />
      <Compile Include="Assets\Script\BasicScript\FadeManager.cs" />
      <Compile Include="Assets\Script\BasicScript\SingletonMonoBehaviour.cs" />
+     <Compile Include="Assets\Script\ExitGame.cs" />
+     <Compile Include="Assets\Script\GoTitle.cs" />
      <Compile Include="Assets\Script\Player.cs" />
      <Compile Include="Assets\Script\SelectUIAnimation.cs" />
      <Compile Include="Assets\Script\StageSelect.cs" />

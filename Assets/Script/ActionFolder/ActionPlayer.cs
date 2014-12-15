@@ -278,7 +278,8 @@ public class ActionPlayer : MonoBehaviour {
 	void Death()
 	{
 		//	再読み込み.
-		Application.LoadLevel(Application.loadedLevel);
+		//Application.LoadLevel(Application.loadedLevel);
+		FadeManager.Instance.LoadLevel("GameOver",1.0f);
 	}
 	
 	void OnGUI()

@@ -12,7 +12,7 @@ public class SelectUIAnimation : MonoBehaviour {
 	bool blueStart = false;
 	//bool blueEnter = false;
 
-	bool greenStart = false;
+	//bool greenStart = false;
 	//bool greenEnter = false;
 
 	// Use this for initialization
@@ -40,11 +40,12 @@ public class SelectUIAnimation : MonoBehaviour {
 				blueStart = false;
 				GetComponent<Animator>().SetBool("BlueStart",blueStart);
 			}
+			/*
 			if(greenStart)
 			{
 				greenStart = false;
 				GetComponent<Animator>().SetBool("GreenStart",greenStart);
-			}
+			}*/
 
 			PushEnter();
 		}
@@ -62,15 +63,15 @@ public class SelectUIAnimation : MonoBehaviour {
 				redStart = false;
 				GetComponent<Animator>().SetBool("RedStart",redStart);
 			}
-			if(greenStart)
+			/*if(greenStart)
 			{
 				greenStart = false;
 				GetComponent<Animator>().SetBool("GreenStart",greenStart);
-			}
+			}*/
 
 			PushEnter();
 		}
-
+		/*
 		if(_select.Stage == 2)
 		{
 			//	緑の栞を左にずらす
@@ -92,6 +93,7 @@ public class SelectUIAnimation : MonoBehaviour {
 
 			PushEnter();
 		}
+		*/
 	}
 
 	void PushEnter()

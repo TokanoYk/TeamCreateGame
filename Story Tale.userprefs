@@ -1,10 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\SelectUIAnimation.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\AdventureFolder\ClearNovelPart.cs">
     <Files>
-      <File FileName="Assets\Script\UIAnimation.cs" Line="36" Column="4" />
-      <File FileName="Assets\Script\StageSelect.cs" Line="74" Column="12" />
-      <File FileName="Assets\Script\SelectUIAnimation.cs" Line="90" Column="28" />
+      <File FileName="Assets\Script\GoTitle.cs" Line="5" Column="21" />
+      <File FileName="Assets\Script\AdventureFolder\ClearNovelPart.cs" Line="102" Column="12" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

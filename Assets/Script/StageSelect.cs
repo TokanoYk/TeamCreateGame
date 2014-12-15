@@ -47,7 +47,7 @@ public class StageSelect : MonoBehaviour {
 		{
 			Stage ++;
 
-			if(Stage > 2)
+			if(Stage > 1)
 			{
 				Stage = 0;
 			}
@@ -60,7 +60,7 @@ public class StageSelect : MonoBehaviour {
 			Stage --;
 			if(Stage < 0)
 			{
-				Stage = 2;
+				Stage = 1;
 			}
 			Debug.Log(Stage);
 		}

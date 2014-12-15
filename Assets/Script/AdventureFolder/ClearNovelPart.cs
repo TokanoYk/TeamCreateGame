@@ -102,7 +102,7 @@ public class ClearNovelPart : MonoBehaviour {
 			//	12で終了
 			if(count >= 14)
 			{
-				FadeManager.Instance.LoadLevel("StageSelect",1.0f);
+				FadeManager.Instance.LoadLevel("StaffRoll",1.0f);
 				Debug.Log("終了");
 
 				_namebox.yuukuName = false;
