@@ -30,6 +30,10 @@ public class DamageEnemy : MonoBehaviour {
 	private float Fly = 10f;
 	private float y = 0.0f;
 
+	private float rotateX = 0f;
+	private float rotateY = 0f;
+	private float rotateZ = -30f;
+
 	//	死んでいるかどうか
 	public bool dead = false;
 
@@ -44,7 +48,10 @@ public class DamageEnemy : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if(Life <= 0)
+		{
+			Turn();
+		}
 	}
 
 	/// <summary>ぶつかった</summary>
@@ -77,18 +84,20 @@ public class DamageEnemy : MonoBehaviour {
 
 		if(Life <= 0)
 		{
-			//dead = true;
-
-			//DrawParticle();
-			//	斜め上に飛んで行く
-			//	飛んでいったあとに敵をデストロイ
-			//	デストロイした後に花火的なパーティクル
+			//	斜め上へ
 			rigidbody2D.velocity = new Vector2 (FlySpeed, y += Fly);
+
+			//	敵グラが消えた瞬間にParticle発生
 			Invoke("DrawParticle",0.3f);
 			Destroy(gameObject,0.3f);
-
 		}
 		//	場所の上書き
 		transform.position = NewPosition;
+	}
+
+	void Turn()
+	{
+		//	敵が死んだ時にまわる
+		rigidbody2D.transform.Rotate(rotateX,rotateY,rotateZ);
 	}
 }
