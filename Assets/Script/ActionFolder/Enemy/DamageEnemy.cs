@@ -6,7 +6,7 @@ public class DamageEnemy : MonoBehaviour {
 	
 	//	死んだ時に呼びだされるパーティクル
 	public GameObject DeathParticle; 
-
+	
 	//	-------------------------------------------
 	//	GetComponent用
 	//	-------------------------------------------
@@ -34,6 +34,36 @@ public class DamageEnemy : MonoBehaviour {
 	private float rotateY = 0f;
 	private float rotateZ = -30f;
 
+
+	//	----------------------------------------------------
+	//	言葉
+	//	----------------------------------------------------
+
+	//	各自のゲームオブジェクトを登録する
+	public GameObject EnemyHaveWord;
+
+	//	ゲームオブジェクトとboolで判定する用
+	public bool 
+				miria,
+				lady,
+				boy,
+				poroporo,
+				mother,
+				mother2,
+				arusu,
+				shadow,
+				woman,
+				hot,
+				family,
+				dear,
+				love,
+				neck,
+				freesia,
+				necklace = false;
+
+	//	------------------------------------------------------
+
+
 	//	死んでいるかどうか
 	public bool dead = false;
 
@@ -59,12 +89,17 @@ public class DamageEnemy : MonoBehaviour {
 	{
 		if(coll.gameObject.tag == "Attack" || coll.gameObject.tag == "Player")
 		{
+			//	敵を倒した時にWordに送るアニメーションを判定する
+			WordJudment();
+
+			//	Wordの数をカウントする
 			_words.words ++;
 			Life -= _player.attackPower;
 			//Destroy(gameObject);
 			Dead ();
 		}
 	}
+
 	/// <summary>パーティクルを発生させる関数</summary>
 	void DrawParticle()
 	{
@@ -95,9 +130,113 @@ public class DamageEnemy : MonoBehaviour {
 		transform.position = NewPosition;
 	}
 
+	/// <summary>敵が死んだ時にまわる</summary>
 	void Turn()
 	{
-		//	敵が死んだ時にまわる
 		rigidbody2D.transform.Rotate(rotateX,rotateY,rotateZ);
+	}
+
+	/// <summary>アニメーション再生を判定する</summary>
+	void WordJudment()
+	{
+		//	ID判定して倒された敵が何の文字を持っているのか
+		//	文字アニメーションを引き渡すのを変える
+
+		//	【ミリア】の文字を持ったオブジェクトを倒したら
+		if(EnemyHaveWord == miria)
+		{
+			_wordanimation.miriaAnimation = true;
+		}
+
+		//	【少女】
+		if(EnemyHaveWord == lady)
+		{
+			_wordanimation.ladyAnimation = true;
+		}
+
+		//	【少年】
+		if(EnemyHaveWord == boy)
+		{
+			_wordanimation.boyAnimation = true;
+		}
+
+		//	【ぽろぽろ】
+		if(EnemyHaveWord == poroporo)
+		{
+			_wordanimation.poroporoAnimation = true;
+		}
+
+		//	【母親】
+		if(EnemyHaveWord == mother)
+		{
+			_wordanimation.motherAnimation = true;
+		}
+
+		//	【お母さぁん】
+		if(EnemyHaveWord == mother2)
+		{
+			_wordanimation.mother2Animation = true;
+		}
+
+		//	【アルス】
+		if(EnemyHaveWord == arusu)
+		{
+			_wordanimation.arusuAnimation = true;
+		}
+
+		//	【草陰】
+		if(EnemyHaveWord == shadow)
+		{
+			_wordanimation.shadowAnimation = true;
+		}
+
+		//	【女性】
+		if(EnemyHaveWord == woman)
+		{
+			_wordanimation.womanAnimation = true;
+		}
+
+		//	【暖かいもの】
+		if(EnemyHaveWord == hot)
+		{
+			_wordanimation.hotAnimation = true;
+		}
+
+		//	【親子】
+		if(EnemyHaveWord == family)
+		{
+			_wordanimation.familyAnimation = true;
+		}
+
+		//	【親愛】
+		if(EnemyHaveWord == dear)
+		{
+			_wordanimation.dearAnimation = true;
+		}
+
+		//	【愛】
+		if(EnemyHaveWord == love)
+		{
+			_wordanimation.loveAnimation = true;
+		}
+
+		//	【首元】
+		if(EnemyHaveWord == neck)
+		{
+			_wordanimation.neckAnimation = true;
+		}
+
+		//	【フリージア】
+		if(EnemyHaveWord == freesia)
+		{
+			_wordanimation.freesiaAnimation = true;
+		}
+
+		//	【ネックレス】
+		if(EnemyHaveWord == necklace)
+		{
+			_wordanimation.necklaceAnimation = true;
+		}
+
 	}
 }

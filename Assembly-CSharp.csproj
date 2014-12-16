@@ -86,6 +86,7 @@
      <Compile Include="Assets\Script\StageSelect.cs" />
      <Compile Include="Assets\Script\Title.cs" />
      <Compile Include="Assets\Script\UIAnimation.cs" />
+     <Compile Include="Assets\Script\WordBook.cs" />
      <None Include="Assets\Script\AdventureFolder\Scenarios\FirstStory.txt" />
      <None Include="Assets\Script\AdventureFolder\Scenarios\ClearStory.txt" />
   </ItemGroup>
