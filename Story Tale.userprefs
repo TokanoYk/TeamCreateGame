@@ -1,10 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\ActionFolder\WordAnimation.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\AdventureFolder\NovelPatt.cs">
     <Files>
-      <File FileName="Assets\Script\WordBook.cs" Line="34" Column="3" />
-      <File FileName="Assets\Script\ActionFolder\Enemy\DamageEnemy.cs" Line="169" Column="9" />
-      <File FileName="Assets\Script\ActionFolder\WordAnimation.cs" Line="88" Column="11" />
+      <File FileName="Assets\Script\AdventureFolder\NovelPatt.cs" Line="844" Column="7" />
+      <File FileName="Assets\Script\Title.cs" Line="62" Column="7" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

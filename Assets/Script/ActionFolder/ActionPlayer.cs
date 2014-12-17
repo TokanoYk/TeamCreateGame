@@ -37,7 +37,7 @@ public class ActionPlayer : MonoBehaviour {
 	//	-------------------------------------------
 	//	オーディオ関連
 	//	-------------------------------------------
-	//public AudioClip slash;
+	public AudioClip book;
 
 	//	-------------------------------------------
 	//	ステータス.
@@ -124,6 +124,7 @@ public class ActionPlayer : MonoBehaviour {
 		//	CでClear
 		if(Input.GetKeyDown(KeyCode.C))
 		{
+			audio.PlayOneShot(book);
 			FadeManager.Instance.LoadLevel("ClearNovelPart",1.0f);
 		}
 
@@ -291,13 +292,7 @@ public class ActionPlayer : MonoBehaviour {
 	void Death()
 	{
 		//	再読み込み.
-		//Application.LoadLevel(Application.loadedLevel);
-		FadeManager.Instance.LoadLevel("GameOver",1.0f);
-	}
-	
-	void OnGUI()
-	{
-		//	プレイヤーの体力（読者数）を左上に表示.
-		//GUI.Label (new Rect (0, 0, 10, 10));
+		Application.LoadLevel(Application.loadedLevel);
+		//FadeManager.Instance.LoadLevel("GameOver",1.0f);
 	}
 }

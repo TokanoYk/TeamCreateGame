@@ -4,6 +4,8 @@ using System.Collections;
 //	ゲームオーバー画面
 public class GoTitle: MonoBehaviour {
 
+	public AudioClip book;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -14,6 +16,7 @@ public class GoTitle: MonoBehaviour {
 	
 		if(Input.GetKeyDown(KeyCode.Return))
 		{
+			audio.PlayOneShot(book);
 			FadeManager.Instance.LoadLevel("Title",1.0f);
 		}
 	}

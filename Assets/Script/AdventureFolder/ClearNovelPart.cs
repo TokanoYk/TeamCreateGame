@@ -26,7 +26,8 @@ public class ClearNovelPart : MonoBehaviour {
 	//	オーディオ関連
 	//	-------------------------------------------
 	public AudioClip dash;
-	
+	public AudioClip book;
+
 	bool one = false;
 
 	//	-------------------------------------------
@@ -102,7 +103,9 @@ public class ClearNovelPart : MonoBehaviour {
 			//	12で終了
 			if(count >= 14)
 			{
-				FadeManager.Instance.LoadLevel("StaffRoll",1.0f);
+				//	ページのめくれる音
+				audio.PlayOneShot(book);
+				FadeManager.Instance.LoadLevel("Word",2.0f);
 				Debug.Log("終了");
 
 				_namebox.yuukuName = false;

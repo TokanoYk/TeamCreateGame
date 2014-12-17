@@ -35,6 +35,7 @@ public class NovelPatt : MonoBehaviour {
 	//	-------------------------------------------
 	public AudioClip door;
 	public AudioClip dash;
+	public AudioClip book;
 
 	bool one = false;
 	public bool play = false;
@@ -146,6 +147,7 @@ public class NovelPatt : MonoBehaviour {
 		//	Sを押すとスキップ
 		if(Input.GetKeyDown(KeyCode.S))
 		{
+			audio.PlayOneShot(book);
 			FadeManager.Instance.LoadLevel("Stage1",1.0f);
 		}
 
@@ -160,6 +162,7 @@ public class NovelPatt : MonoBehaviour {
 
 			if(count >= 52)
 			{
+				audio.PlayOneShot(book);
 				FadeManager.Instance.LoadLevel("Stage1",1.0f);
 			}
 		}
@@ -838,6 +841,8 @@ public class NovelPatt : MonoBehaviour {
 					one = true;
 				}
 
+				//one = false;
+
 				if(TextData[47].Length > textLenght)
 				{
 					storage += TextData[47].Substring(textLenght,1);
@@ -850,7 +855,13 @@ public class NovelPatt : MonoBehaviour {
 				_yuuku.impatience = false;
 				_yuuku.mortifying = true;
 
-				one = false;
+
+
+				if(!one)
+				{
+					audio.PlayOneShot(dash);
+					one = true;
+				}
 
 				if(TextData[48].Length > textLenght)
 				{
@@ -867,11 +878,11 @@ public class NovelPatt : MonoBehaviour {
 				_yuuku.mortifying = false;
 				_yuuku.impatience = true;
 
-				if(!one)
-				{
-					audio.PlayOneShot(door);
-					one = true;
-				}
+				//if(!one)
+				//{
+				//	audio.PlayOneShot(door);
+				//	one = true;
+				//}
 
 				if(TextData[49].Length > textLenght)
 				{

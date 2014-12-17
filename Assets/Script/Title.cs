@@ -59,7 +59,7 @@ public class Title : MonoBehaviour {
 		{
 			if(SelectNumber == 0)
 			{
-				audio.volume = 0.5f;
+				//audio.volume = 0.5f;
 				audio.PlayOneShot(open);
 				FadeManager.Instance.LoadLevel("StageSelect", 1.0f);
 				OnKey = true;
@@ -68,7 +68,7 @@ public class Title : MonoBehaviour {
 			//	終了する
 			if(SelectNumber == 1)
 			{
-				audio.volume = 0.5f;
+				//audio.volume = 0.5f;
 				audio.PlayOneShot(close);
 				Invoke("Close",0.8f);
 				OnKey = true;

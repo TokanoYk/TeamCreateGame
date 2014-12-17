@@ -19,6 +19,10 @@ public class BossDamage : MonoBehaviour {
 	//	点滅処理のレンダー
 	private SpriteRenderer _renderer;
 
+	//	-------------------------------------------
+	//	サウンド
+	//	-------------------------------------------
+	public AudioClip book;
 
 	//	-------------------------------------------
 	//	判定用
@@ -88,7 +92,7 @@ public class BossDamage : MonoBehaviour {
 	}
 
 
-	/// <summary>プレイヤーが死んだ時の関数</summary>
+	/// <summary>ボスが死んだ時の関数</summary>
 	void Dead()
 	{
 		if(Life <= 0)
@@ -104,7 +108,10 @@ public class BossDamage : MonoBehaviour {
 
 	void ChangeStage()
 	{
+
 		FadeManager.Instance.LoadLevel("ClearNovelPart",3.0f);
+		audio.volume = 2;
+		audio.PlayOneShot(book);
 	}
 
 }

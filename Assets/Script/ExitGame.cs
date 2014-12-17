@@ -4,6 +4,8 @@ using System.Collections;
 //	Escを押すとゲーム終了
 public class ExitGame : MonoBehaviour {
 
+	public AudioClip bookclose;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -14,7 +16,13 @@ public class ExitGame : MonoBehaviour {
 	
 		if(Input.GetKeyDown(KeyCode.Escape))
 		{
-			Application.Quit();
+			audio.PlayOneShot(bookclose);
+			Invoke("Close",0.8f);
 		}
+	}
+
+	void Close()
+	{
+		Application.Quit();
 	}
 }
