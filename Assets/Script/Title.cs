@@ -31,8 +31,6 @@ public class Title : MonoBehaviour {
 		if(Input.GetKeyDown(KeyCode.DownArrow))
 		{
 			SelectNumber ++;
-			//audio.volume = 0.2f;
-			//audio.PlayOneShot(cursor);
 
 			if(SelectNumber > 1)
 			{
@@ -45,8 +43,6 @@ public class Title : MonoBehaviour {
 		if(Input.GetKeyDown(KeyCode.UpArrow))
 		{
 			SelectNumber --;
-			//audio.volume = 0.2f;
-			//audio.PlayOneShot(cursor);
 
 			if(SelectNumber < 0)
 			{
@@ -59,7 +55,6 @@ public class Title : MonoBehaviour {
 		{
 			if(SelectNumber == 0)
 			{
-				//audio.volume = 0.5f;
 				audio.PlayOneShot(open);
 				FadeManager.Instance.LoadLevel("StageSelect", 1.0f);
 				OnKey = true;
@@ -68,7 +63,6 @@ public class Title : MonoBehaviour {
 			//	終了する
 			if(SelectNumber == 1)
 			{
-				//audio.volume = 0.5f;
 				audio.PlayOneShot(close);
 				Invoke("Close",0.8f);
 				OnKey = true;

@@ -193,8 +193,6 @@ public class Text : MonoBehaviour {
 					}
 				}
 
-
-
 				insertNum = 0;
 			}
 			

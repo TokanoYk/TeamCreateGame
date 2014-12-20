@@ -9,6 +9,8 @@ public class WordBook : MonoBehaviour {
 
 	public AudioClip book;
 
+	public Texture2D Art;
+
 	//	------------------------------------------------------------
 	//	絵本
 	//	------------------------------------------------------------
@@ -50,7 +52,7 @@ public class WordBook : MonoBehaviour {
 		"一冊の本から【愛】というものを\n知った【ミリア】は街へ出かける\nことを決意しました。\n\n" +
 		"自分には与えられていない、\n【愛】というものを求めての\n行動です。\n" +
 		"森を出た【ミリア】の【首元】で、\n【フリージア】の花の\n【ネックレス】が小さく揺れました。\n\n" +
-		"　　　　『親愛のおはなし』ＥＮＤ"
+		"\n　　　　　　　　　　　　　　　　　　　　　　『親愛のおはなし』ＥＮＤ"
 
 		//26行
 	};
@@ -62,7 +64,7 @@ public class WordBook : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+
 		//	→キーかエンターを押すと次のページヘ
 		if(Input.GetKeyDown(KeyCode.RightArrow))
 		{
@@ -129,8 +131,9 @@ public class WordBook : MonoBehaviour {
 		if(page == 2)
 		{
 			GUI.Label (LeftTopLine, Words[5], LabelStyle);
+			GUI.Label (new Rect(sw / 2 + 10,sh / 2 - 200,270,410),Art);
 		}
-
 	}
-	
+
+
 }
