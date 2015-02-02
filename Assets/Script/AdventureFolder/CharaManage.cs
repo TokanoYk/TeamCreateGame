@@ -3,7 +3,7 @@ using System.Collections;
 
 //	テキストマネージャーからテキストに問い合わせたデータパスを受け取って
 //	表情を変化させる
-public class CharacterManage : MonoBehaviour {
+public class CharaManage : MonoBehaviour {
 
 	//	http://qiita.com/2dgames_jp/items/ed79779893a69cfc17aa
 

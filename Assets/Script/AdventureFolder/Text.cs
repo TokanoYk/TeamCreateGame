@@ -35,12 +35,12 @@ public class Text : MonoBehaviour {
 	public TextAsset _text;
 	public IEnumerable<string> layoutInfo;
 	public IEnumerable<string> LineBreak;
-	private string useText;
+
 	private int insertNum;
 
-	private string Name;
-	private string Id;
-	private string Usetext;
+	private string characterName;
+	private string textureId;
+	private string useText;
 
 	//layoutInfo.elemtnat(textline) == string text[textline]; 
 	
@@ -68,7 +68,11 @@ public class Text : MonoBehaviour {
 
 		insertNum = 0;
 
-		useText = layoutInfo.ElementAt (textLine);
+		var data = layoutInfo.ElementAt(textLine).Split(',');
+		characterName = data[0];
+		textureId = data[1];
+		useText = data[2];
+
 		textLine++;
 	}
 
@@ -85,10 +89,11 @@ public class Text : MonoBehaviour {
 	{
 		layoutInfo = _text.text.Split ('\n');
 		//1行をもう一度分割する
-		foreach(var s in layoutInfo)
+
+		/*foreach(var s in layoutInfo)
 		{
 			s.Split(',');
-		}
+		}*/
 	}
 
 	// Update is called once per frame
@@ -124,17 +129,11 @@ public class Text : MonoBehaviour {
 				//	UseTextに１行追加する
 				if(textLine < layoutInfo.Count())
 				{
-					var sample = layoutInfo.ElementAt(textLine).Split(',');
-					string name = sample[0];
-					string texture_id = sample[1];
-					string usetext = sample[2];
-
-					var line = layoutInfo.ElementAt(textLine).Split(',');
-					Name = line[0];
-					Id = line[1];
-					Usetext = line[2];
-
-					useText = layoutInfo.ElementAt(textLine);
+					//IEnumerable<string> test = layoutInfo.ElementAt(textLine).Split(',');
+					var data = layoutInfo.ElementAt(textLine).Split(',');
+					characterName = data[0];
+					textureId = data[1];
+					useText = data[2];
 				}
 
 				//　表示するTEXTを初期化する
