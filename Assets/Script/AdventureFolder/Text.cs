@@ -11,18 +11,7 @@ public class Text : MonoBehaviour {
 
 	//	画像表示順
 	public int Depth = 0;
-
-	//	-------------------------------------------
-	//	グラフィックの指定
-	//	-------------------------------------------
-	//public Texture2D TextBox;
-
-
-	//	-------------------------------------------
-	//	判定用
-	//	-------------------------------------------
-	//bool Hide = false;
-
+	
 	//	-------------------------------------------
 	//	GetComponentとか用
 	//	-------------------------------------------
@@ -135,15 +124,15 @@ public class Text : MonoBehaviour {
 				//	UseTextに１行追加する
 				if(textLine < layoutInfo.Count())
 				{
-					// var sample = layoutinfo.elementat(textline).split(',');
-					// string name = sample[0];
-					// string id = sample[1];
-					// string usetext = sample[2];
+					var sample = layoutInfo.ElementAt(textLine).Split(',');
+					string name = sample[0];
+					string id = sample[1];
+					string usetext = sample[2];
 
-					//var line = layoutInfo.ElementAt(textLine).Split(',');
-					//Name = line[0];
-					//Id = line[1];
-					//Usetext = line[2];
+					var line = layoutInfo.ElementAt(textLine).Split(',');
+					Name = line[0];
+					Id = line[1];
+					Usetext = line[2];
 
 					useText = layoutInfo.ElementAt(textLine);
 				}
