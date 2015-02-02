@@ -126,7 +126,7 @@ public class Text : MonoBehaviour {
 				{
 					var sample = layoutInfo.ElementAt(textLine).Split(',');
 					string name = sample[0];
-					string id = sample[1];
+					string texture_id = sample[1];
 					string usetext = sample[2];
 
 					var line = layoutInfo.ElementAt(textLine).Split(',');
@@ -159,11 +159,6 @@ public class Text : MonoBehaviour {
 			{
 				FadeManager.Instance.LoadLevel("Stage1",1.0f);
 				//Application.LoadLevel("Stage1");
-			}
-
-			if(textLine == 2)
-			{
-				Debug.Log("Ok");
 			}
 		}
 

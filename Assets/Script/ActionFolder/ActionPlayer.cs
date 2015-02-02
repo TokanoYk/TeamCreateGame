@@ -198,7 +198,7 @@ public class ActionPlayer : MonoBehaviour {
 		GetComponent<Animator>().SetBool("Ground",jump);
 
 		//	オブジェクトの上方向に瞬間的にジャンプする.
-		rigidbody2D.AddForce (transform.up * force, ForceMode2D.Impulse);
+		rigidbody2D.rigidbody2D.AddForce (transform.up * force, ForceMode2D.Impulse);
 
 		//	足場に乗っていた場合ジャンプ力の値を増やす.
 		if(OnScaffolding)
