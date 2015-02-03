@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 //using System.Threading.Tasks;
 
-public class Text : MonoBehaviour {
+public class textManager : MonoBehaviour {
 
 	//	画像表示順
 	public int Depth = 0;
@@ -38,9 +38,10 @@ public class Text : MonoBehaviour {
 
 	private int insertNum;
 
-	private string characterName;
-	private string textureId;
+	public string characterName;
+	public string textureId;
 	private string useText;
+
 
 	//layoutInfo.elemtnat(textline) == string text[textline]; 
 	
@@ -87,13 +88,8 @@ public class Text : MonoBehaviour {
 	
 	void readText()
 	{
+		//	ファイルを１行ずつ分割する
 		layoutInfo = _text.text.Split ('\n');
-		//1行をもう一度分割する
-
-		/*foreach(var s in layoutInfo)
-		{
-			s.Split(',');
-		}*/
 	}
 
 	// Update is called once per frame
@@ -165,6 +161,7 @@ public class Text : MonoBehaviour {
 		{
 			//　storageに対してusetextから一文字を追加する
 			storage += useText[currentNum];
+
 			if( insertNum >= 23 ) 
 			{
 				if(currentNum + 1 < useText.Count())
@@ -186,15 +183,4 @@ public class Text : MonoBehaviour {
 		}
 	}
 
-	/*
-	void DrawTextBox()
-	{
-		if(Hide)
-		{
-			GUI.Label(new Rect(0,0,640,100),TextBox);
-		}
-
-
-	}
-	*/
 }
