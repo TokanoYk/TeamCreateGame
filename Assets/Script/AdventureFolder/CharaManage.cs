@@ -121,6 +121,7 @@ public class CharaManage : MonoBehaviour {
 				break;
 			case "n3":
 				drawSprite.sprite = chara3;
+				
 				break;
 			case "n4":
 				drawSprite.sprite = chara4;

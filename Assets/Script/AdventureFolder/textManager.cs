@@ -77,15 +77,6 @@ public class textManager : MonoBehaviour {
 		textLine++;
 	}
 
-	//	キャラ画像読み込み
-	void ReadGraphic()
-	{
-		//	グラフィックデータパスを用意する
-
-
-
-	}
-	
 	void readText()
 	{
 		//	ファイルを１行ずつ分割する
@@ -116,8 +107,8 @@ public class textManager : MonoBehaviour {
 				textLine++;
 			}
 		*/
-		//if(Input.GetMouseButtonDown(0))
-		if(Input.GetKeyDown(KeyCode.Return))
+
+		if(Input.GetKeyDown(KeyCode.Return) || Input.GetMouseButtonDown(0))
 		{
 			if(useText.Count() <= storage.Count())
 			{
