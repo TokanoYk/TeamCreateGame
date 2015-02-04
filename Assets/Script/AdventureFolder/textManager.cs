@@ -54,7 +54,7 @@ public class textManager : MonoBehaviour {
 		float sh = Screen.height;
 		
 		//	文字列表示
-		Rect mozi = new Rect (sw /2 -180, sh /2 + 120, sw / 2, sh / 2);
+		Rect mozi = new Rect (sw /2 - 200, sh /2 + 120, sw / 2, sh / 2);
 		GUI.Label (mozi, storage, LabelStyle);
 	}
 
@@ -141,7 +141,6 @@ public class textManager : MonoBehaviour {
 				//次に読み込む行を指定
 				textLine++;
 			}else{
-
 				//　全文字をusetextからstorageへcopy
 				if( insertNum >= 30 ) 
 				{
@@ -150,10 +149,9 @@ public class textManager : MonoBehaviour {
 				}
 			}
 
-			if(textLine >= 55)
+			if(textLine >= 56)
 			{
 				FadeManager.Instance.LoadLevel("Stage1",1.0f);
-				//Application.LoadLevel("Stage1");
 			}
 		}
 
@@ -172,7 +170,6 @@ public class textManager : MonoBehaviour {
 						storage += '\n';
 					}
 				}
-
 				insertNum = 0;
 			}
 			
