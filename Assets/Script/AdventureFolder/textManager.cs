@@ -38,11 +38,19 @@ public class textManager : MonoBehaviour {
 
 	private int insertNum;
 
+	/// <summary>キャラ名</summary>
 	public string characterName;
+	/// <summary>キャラグラフィック</summary>
 	public string textureId;
+	/// <summary>背景</summary>
+	public string backgroundName;
+	/// <summary>BGM</summary>
+	public string backMusic;
+	/// <summary>SE</summary>
+	public string se;
+	/// <summary>セリフ</summary>
 	private string useText;
-
-
+	
 	//layoutInfo.elemtnat(textline) == string text[textline]; 
 	
 
@@ -72,7 +80,11 @@ public class textManager : MonoBehaviour {
 		var data = layoutInfo.ElementAt(textLine).Split(',');
 		characterName = data[0];
 		textureId = data[1];
-		useText = data[2];
+		backgroundName = data[2];
+		backMusic = data [3];
+		se = data [4];
+		//	増えるたびに数字は繰り上がり
+		useText = data[5];
 
 		textLine++;
 	}
@@ -120,8 +132,13 @@ public class textManager : MonoBehaviour {
 					var data = layoutInfo.ElementAt(textLine).Split(',');
 					characterName = data[0];
 					textureId = data[1];
-					useText = data[2];
+					backgroundName = data[2];
+					backMusic = data[3];
+					se = data[4];
+					useText = data[5];
 				}
+
+				Debug.Log(se);
 
 				//　表示するTEXTを初期化する
 				storage = "";
@@ -140,7 +157,7 @@ public class textManager : MonoBehaviour {
 				}
 			}
 
-			if(textLine >= 56)
+			if(textLine >= 58)
 			{
 				FadeManager.Instance.LoadLevel("Stage1",1.0f);
 			}

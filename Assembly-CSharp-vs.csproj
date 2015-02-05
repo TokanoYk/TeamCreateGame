@@ -76,6 +76,7 @@
      <Compile Include="Assets\Script\AdventureFolder\DrawYuuku.cs" />
      <Compile Include="Assets\Script\AdventureFolder\MouseCursor.cs" />
      <Compile Include="Assets\Script\AdventureFolder\NovelPatt.cs" />
+     <Compile Include="Assets\Script\AdventureFolder\PlaySE.cs" />
      <Compile Include="Assets\Script\AdventureFolder\textManager.cs" />
      <Compile Include="Assets\Script\BasicScript\FadeManager.cs" />
      <Compile Include="Assets\Script\BasicScript\SingletonMonoBehaviour.cs" />

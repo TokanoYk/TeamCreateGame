@@ -13,14 +13,22 @@ public class ChangeBackground : MonoBehaviour {
 	public Sprite ForestGraphic;
 
 	//	---------------------------------------------------
+	//	取得
+	//	---------------------------------------------------
+	private textManager _text;
+	public GameObject textObject;
+
+	//	---------------------------------------------------
 	//	判定
 	//	---------------------------------------------------
+	/*
 	public bool home = true;
 	public bool forest = false;
-
+	*/
 
 	// Use this for initialization
 	void Start () {
+		_text = textObject.GetComponent<textManager> ();
 		BackgroundSprite = gameObject.GetComponent<SpriteRenderer> ();
 	}
 	
@@ -31,9 +39,18 @@ public class ChangeBackground : MonoBehaviour {
 
 	void DrawingBackground()
 	{
+		/*
 		if (home)
 			BackgroundSprite.sprite = YuukuHomeGraphic;
 		if (forest)
 			BackgroundSprite.sprite = ForestGraphic;
+		*/
+
+		if(_text.backgroundName == "home")
+			BackgroundSprite.sprite = YuukuHomeGraphic;
+
+		if(_text.backgroundName == "forest")
+			BackgroundSprite.sprite = ForestGraphic;
+
 	}
 }

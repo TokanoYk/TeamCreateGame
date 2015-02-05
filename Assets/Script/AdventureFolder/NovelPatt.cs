@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class NovelPatt : MonoBehaviour {
-
+	/*
 	//	-------------------------------------------
 	//	GetComponentとか用
 	//	-------------------------------------------
@@ -928,7 +928,7 @@ public class NovelPatt : MonoBehaviour {
 	}
 
 
-
+*/
 
 }
 

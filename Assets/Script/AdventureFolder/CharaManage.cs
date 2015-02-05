@@ -42,13 +42,12 @@ public class CharaManage : MonoBehaviour {
 	/// <summary></summary>
 	void CharaSeting()
 	{
-		Debug.Log (_text.characterName);
-
 		if(_text.characterName == charaName)
 		{
 			characterDraw();
 		}
-		else if(_text.characterName == hide)
+		//	ファイルにhideが入っていたら一度キャラクターを全員クリアする
+		if(_text.characterName == hide)
 		{
 			drawSprite.sprite = charaHide;
 		}
@@ -129,8 +128,13 @@ public class CharaManage : MonoBehaviour {
 			case "n5":
 				drawSprite.sprite = chara5;
 				break;
+			//	家にいるけど姿が見えない時
 			case "n6":
 				drawSprite.sprite = chara6;
+				break;
+			//	家から出た時
+			case "n7":
+				drawSprite.sprite = chara7;
 				break;
 		}
 	}

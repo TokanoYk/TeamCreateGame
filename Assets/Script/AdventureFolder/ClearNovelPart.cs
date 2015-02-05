@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ClearNovelPart : MonoBehaviour {
 
-		
+	/*
 	//	-------------------------------------------
 	//	GetComponentとか用
 	//	-------------------------------------------
@@ -327,6 +327,6 @@ public class ClearNovelPart : MonoBehaviour {
 		}
 		
 	}
-
+	*/
 
 }
