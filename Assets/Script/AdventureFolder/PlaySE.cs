@@ -12,6 +12,7 @@ public class PlaySE : MonoBehaviour {
 
 	public AudioClip door;
 	public AudioClip dash;
+	public AudioClip book;
 
 	// Use this for initialization
 	void Start ()
@@ -42,6 +43,15 @@ public class PlaySE : MonoBehaviour {
 			{
 				dashOne = true;
 				audio.PlayOneShot(dash);
+			}
+		}
+
+		if(_text.se == "book")
+		{
+			if(!dashOne)
+			{
+				dashOne = true;
+				audio.PlayOneShot(book);
 			}
 		}
 

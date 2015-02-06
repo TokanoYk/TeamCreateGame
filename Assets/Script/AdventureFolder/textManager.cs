@@ -9,6 +9,9 @@ using System.Linq;
 
 public class textManager : MonoBehaviour {
 
+	public bool clear = false;
+
+
 	//	画像表示順
 	public int Depth = 0;
 	
@@ -120,6 +123,8 @@ public class textManager : MonoBehaviour {
 			}
 		*/
 
+
+
 		if(Input.GetKeyDown(KeyCode.Return) || Input.GetMouseButtonDown(0))
 		{
 			if(useText.Count() <= storage.Count())
@@ -157,11 +162,44 @@ public class textManager : MonoBehaviour {
 				}
 			}
 
-			if(textLine >= 58)
+			if(!clear)
+			{
+				if(textLine >= 58)
+				{
+					FadeManager.Instance.LoadLevel("Stage1",1.0f);
+				}
+
+				if(Input.GetKeyDown(KeyCode.S))
+				{
+					FadeManager.Instance.LoadLevel("Stage1",1.0f);
+				}
+			}
+			else
+			{	//	Clearしてたら
+				if(textLine >= 14)
+				{
+					FadeManager.Instance.LoadLevel("ClearWord",2.0f);
+				}
+
+			}
+		}
+
+		//	スキップ
+		if(!clear)
+		{
+			if(Input.GetKeyDown(KeyCode.S))
 			{
 				FadeManager.Instance.LoadLevel("Stage1",1.0f);
 			}
 		}
+		else
+		{	
+			if(Input.GetKeyDown(KeyCode.S))
+			{
+				FadeManager.Instance.LoadLevel("ClearWord",2.0f);
+			}
+		}
+
 
 		if(currentNum < useText.Count())
 		{

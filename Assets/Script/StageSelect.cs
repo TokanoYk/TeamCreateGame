@@ -70,7 +70,7 @@ public class StageSelect : MonoBehaviour {
 			if(Stage == 0)
 			{
 				audio.PlayOneShot(Page);
-				FadeManager.Instance.LoadLevel("NovelPart", 1.0f);
+				FadeManager.Instance.LoadLevel("Word", 2.0f);
 				OnEnter = true;
 			}
 			/*

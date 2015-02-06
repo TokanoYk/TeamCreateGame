@@ -24,6 +24,8 @@ public class CharaManage : MonoBehaviour {
 	public Sprite chara6;
 	public Sprite chara7;
 	public Sprite chara8;
+	public Sprite neneaMoth;
+	public Sprite neneaMoth2;
 
 	private Sprite charaHide;
 	
@@ -136,6 +138,15 @@ public class CharaManage : MonoBehaviour {
 			case "n7":
 				drawSprite.sprite = chara7;
 				break;
+			//	襲撃用
+			case "moth":
+				drawSprite.sprite = neneaMoth;
+				break;
+			case "moth2":
+				drawSprite.sprite = neneaMoth2;
+				break;
+
+
 		}
 	}
 

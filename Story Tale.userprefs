@@ -1,11 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\AdventureFolder\textManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\AdventureFolder\CharaManage.cs">
     <Files>
-      <File FileName="Assets\Script\AdventureFolder\textManager.cs" Line="152" Column="33" />
-      <File FileName="Assets\Script\AdventureFolder\CharaManage.cs" Line="10" Column="2" />
-      <File FileName="Assets\Script\AdventureFolder\PlaySE.cs" Line="52" Column="20" />
-      <File FileName="Assets\Script\AdventureFolder\NovelPatt.cs" Line="30" Column="28" />
+      <File FileName="Assets\Script\AdventureFolder\textManager.cs" Line="203" Column="1" />
+      <File FileName="Assets\Script\AdventureFolder\CharaManage.cs" Line="132" Column="11" />
+      <File FileName="Assets\Script\AdventureFolder\NovelPatt.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\AdventureFolder\ClearNovelPart.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\AdventureFolder\PlaySE.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\WordBook.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\StageSelect.cs" Line="73" Column="41" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
